@@ -5,9 +5,9 @@ import Link from "next/link";
 import BookingInquiryForm from "@/components/BookingInquiryForm";
 
 export const metadata: Metadata = {
-  title: "Events & Bookings | Evolution Production Company",
+  title: "Corporate & Special Events | Evolution Production Company",
   description:
-    "Book Evolution Production Company for your next event. Corporate events, festivals, private celebrations, venue productions, and more.",
+    "Book Evolution Production Company for your next event. Immersive live performance blending skating, dance, and movement — for corporate events, brand activations, festivals, private celebrations, and venue productions.",
 };
 
 const eventTypes = [
@@ -31,7 +31,7 @@ export default function EventsPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Live Entertainment
+              Corporate &amp; Special Events
             </p>
             <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-[100px] text-cream tracking-widest leading-none mb-6">
               BRING EPC TO
@@ -39,10 +39,10 @@ export default function EventsPage() {
               <span className="text-gradient">YOUR EVENT</span>
             </h1>
             <p className="font-dm text-cream/70 text-lg leading-relaxed max-w-2xl mb-8">
-              Dynamic live entertainment featuring skating, dance, and theatrical
-              performance. Evolution Production Company creates visually exciting
-              performances designed to elevate corporate events, festivals, private
-              celebrations, and venue productions.
+              Immersive live performance blending skating, dance, and movement.
+              Evolution Production Company creates visually exciting experiences
+              designed to elevate corporate events, brand activations, festivals,
+              private celebrations, and venue productions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -120,24 +120,26 @@ export default function EventsPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {eventTypes.map((type) => (
-              <div
-                key={type.title}
-                className="p-6 rounded-2xl bg-[#13101c] hover:-translate-y-1 transition-all duration-200"
-              >
+          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+              {eventTypes.map((type) => (
                 <div
-                  className="h-0.5 w-8 rounded-full mb-4"
-                  style={{ background: `linear-gradient(90deg, ${type.color}, ${type.color}00)` }}
-                />
-                <h3 className="font-bebas text-xl text-cream tracking-widest mb-2">
-                  {type.title}
-                </h3>
-                <p className="font-dm text-cream/60 text-sm leading-relaxed">
-                  {type.description}
-                </p>
-              </div>
-            ))}
+                  key={type.title}
+                  className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
+                >
+                  <div
+                    className="h-0.5 w-8 rounded-full mb-4"
+                    style={{ background: `linear-gradient(90deg, ${type.color}, ${type.color}00)` }}
+                  />
+                  <h3 className="font-bebas text-xl text-cream tracking-widest mb-2">
+                    {type.title}
+                  </h3>
+                  <p className="font-dm text-cream/60 text-sm leading-relaxed">
+                    {type.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

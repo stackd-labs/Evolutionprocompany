@@ -36,7 +36,7 @@ export default function About() {
           <div>
             <FadeUp>
               <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Our Story
+                Who We Are
               </p>
               <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest leading-tight mb-6">
                 BUILT FOR{" "}
@@ -47,21 +47,20 @@ export default function About() {
             </FadeUp>
             <FadeUp delay={0.15}>
               <p className="font-dm text-cream/70 text-base leading-relaxed mb-4">
-                Evolution Production Company was founded to fill a void in the
-                performing arts: a professional-grade company that treats ice
-                and dance as equals. We are not a studio. We are not a
-                recreation program. We are a production company — and every
-                member is a professional in training.
+                Evolution Production Company is an immersive performance company
+                blending skating, dance, and movement into continuous live
+                experiences. We are not a studio. We are not a recital. We are a
+                production company — and every member is a professional in
+                training.
               </p>
             </FadeUp>
             <FadeUp delay={0.25}>
               <p className="font-dm text-cream/70 text-base leading-relaxed mb-8">
-                Based in the Washington DC area, EPC runs three full productions per year
-                with structured training cycles, original choreography, and real
-                career pathways. Our Flex Track develops the next generation
-                from the ground up. Our Junior Company (ages 6–11) and Senior
-                Company (ages 12+) perform, grow, and earn their place on the
-                national stage.
+                Based in the DMV, EPC launches with Ascend — its inaugural
+                production — built on original choreography, immersive staging,
+                and real career pathways. Our Youth Company, Junior Company,
+                Company Artists, and Flex Track perform, grow, and earn their
+                place on the stage.
               </p>
             </FadeUp>
             <FadeUp delay={0.35}>

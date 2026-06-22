@@ -30,6 +30,5 @@ export interface AuditionTier {
   ages: string;
   description: string;
   requirements: string[];
-  payout: string;
   color: string;
 }

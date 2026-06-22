@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
 import { GROWTH_PHASES } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -32,8 +33,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Who we are (relocated from homepage) */}
+      <About />
+
       {/* Founder vision */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
@@ -52,15 +56,10 @@ export default function AboutPage() {
                   grow in the training environments that got them here?
                 </p>
                 <p>
-                  EPC is that place. A home for performers who are serious,
-                  committed, and hungry — regardless of where they are in their
-                  journey. A place where the training is real, the productions
-                  are professional, and the path forward is clear.
-                </p>
-                <p>
-                  We built EPC for the artists who have always known they were
-                  meant to perform. We built it so they have somewhere worthy to
-                  grow.
+                  EPC is that place — a home for performers who are serious,
+                  committed, and hungry, no matter where they are in their
+                  journey. The training is real, the productions are professional,
+                  and the path forward is clear.
                 </p>
               </div>
             </div>
@@ -68,7 +67,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bebas text-xl text-gold tracking-widest mb-3">OUR MISSION</h3>
                 <p className="font-dm text-cream/65 text-sm leading-relaxed">
-                  To provide a professional-grade performance company for ice and dance artists in the Washington DC area and beyond — offering real training, real productions, and real career pathways for serious performers at every stage.
+                  To build an immersive performance company that blends skating, dance, and movement into continuous live experiences across the DMV and beyond — offering real training, real productions, and real career pathways for serious performers at every stage.
                 </p>
               </div>
               <div className="h-px bg-white/8" />
@@ -94,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* Growth phases */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
@@ -106,9 +105,10 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden">
-            {GROWTH_PHASES.map((phase, i) => (
-              <div key={phase.phase} className="bg-dark p-8">
+          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
+              {GROWTH_PHASES.map((phase, i) => (
+                <div key={phase.phase} className="bg-[#0c0913] p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="font-bebas text-gold tracking-widest text-base">{phase.phase}</span>
                   {phase.status === "active" && (
@@ -124,17 +124,18 @@ export default function AboutPage() {
                 <h3 className="font-bebas text-2xl text-cream tracking-widest mb-3">
                   {phase.title}
                 </h3>
-                <p className="font-dm text-cream/60 text-sm leading-relaxed">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
+                  <p className="font-dm text-cream/60 text-sm leading-relaxed">
+                    {phase.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* As EPC Grows */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand opacity-90" />

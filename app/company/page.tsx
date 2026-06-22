@@ -3,11 +3,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Membership from "@/components/Membership";
 import Link from "next/link";
+import { AUDITION_TIERS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "The Company | Evolution Production Company",
+  title: "Join EPC | Evolution Production Company",
   description:
-    "Explore EPC's Flex Track, Junior Company, and Senior Company tracks, training schedule, curriculum breakdown, and payout structure.",
+    "Explore EPC's company structure — Youth Company, Junior Company, Company Artists, and the Flex Track — plus training, curriculum, and membership.",
 };
 
 const EXPERIENCE_CATEGORIES = [
@@ -124,9 +125,9 @@ const curriculum = [
 
 
 const productionCycle = [
-  { months: "Jan – Mar", show: "Spring Production", perform: "April" },
-  { months: "May – Jul", show: "Summer Production", perform: "August" },
-  { months: "Sep – Nov", show: "Holiday Production", perform: "December" },
+  { months: "Founding Season", show: "Ascend", perform: "September 2026" },
+  { months: "Following", show: "Illuminate", perform: "Winter 2026" },
+  { months: "Following", show: "Ignite", perform: "Spring 2027" },
 ];
 
 export default function CompanyPage() {
@@ -156,14 +157,14 @@ export default function CompanyPage() {
               EPC offers a place to grow.
             </p>
             <p className="font-cormorant italic text-cream/60 text-xl">
-              Three tracks. One standard. A path for every serious performer.
+              One standard. A path for every serious performer.
             </p>
           </div>
         </div>
       </section>
 
       {/* Built to work alongside */}
-      <section className="py-16 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -191,11 +192,12 @@ export default function CompanyPage() {
       </section>
 
       {/* Company tracks */}
-      <section className="py-20 border-t border-white/10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(123,47,190,0.08)_0%,_transparent_55%)] pointer-events-none" />
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              THREE TRACKS. <span className="text-gradient">ONE COMPANY.</span>
+              OUR COMPANY <span className="text-gradient">STRUCTURE</span>
             </h2>
             <p className="mt-3 font-dm text-cream/50 text-sm max-w-xl mx-auto">
               All casting is audition-based. Principal spots and corporate spots are earned
@@ -203,110 +205,64 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Flex Track */}
-            <div className="p-7 rounded-2xl border border-purple/30 bg-purple/8">
-              <div className="inline-block px-3 py-1 rounded-full bg-purple/30 text-purple text-xs font-dm font-semibold tracking-widest uppercase mb-5">
-                All Ages
-              </div>
-              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">
-                FLEX TRACK
-              </h3>
-              <p className="font-dm text-cream/70 text-sm leading-relaxed mb-5">
-                For performers who are new to skating or dance and building
-                foundational skills. Flex members perform in all three annual
-                productions in ensemble roles. Principal eligibility grows with
-                your skills — there&apos;s no ceiling, only the work.
-              </p>
-              <ul className="space-y-2">
-                {[
-                  "Open to all ages and experience levels",
-                  "Performs in ensemble roles in all 3 productions",
-                  "Principal-eligible as skills and readiness develop",
-                  "Foundational technique and conditioning",
-                  "Mentored by Senior Company members",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm font-dm text-cream/70">
-                    <span className="text-purple mt-0.5">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Junior */}
-            <div className="p-7 rounded-2xl border border-magenta/30 bg-magenta/8">
-              <div className="inline-block px-3 py-1 rounded-full bg-magenta/30 text-magenta text-xs font-dm font-semibold tracking-widest uppercase mb-5">
-                Ages 6–11
-              </div>
-              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">
-                JUNIOR COMPANY
-              </h3>
-              <p className="font-dm text-cream/70 text-sm leading-relaxed mb-5">
-                Full company membership for younger performers. Juniors train
-                and perform alongside the Senior Company with age-appropriate
-                roles and a dedicated development curriculum.
-              </p>
-              <ul className="space-y-2">
-                {[
-                  "Full participation in all 3 annual productions",
-                  "Dedicated Junior choreography roles",
-                  "Priority consideration for Senior Company auditions upon readiness",
-                  "Mentored by Senior Company members",
-                  "Age-appropriate technique and conditioning",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm font-dm text-cream/70">
-                    <span className="text-magenta mt-0.5">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Senior */}
-            <div className="p-7 rounded-2xl border border-red/30 bg-red/8">
-              <div className="inline-block px-3 py-1 rounded-full bg-red/30 text-red text-xs font-dm font-semibold tracking-widest uppercase mb-5">
-                Ages 12+
-              </div>
-              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">
-                SENIOR COMPANY
-              </h3>
-              <p className="font-dm text-cream/70 text-sm leading-relaxed mb-5">
-                The advanced level of EPC. Senior members commit to the full
-                season, perform in all productions, and earn real compensation.
-                Principal and corporate spots are earned through audition.
-              </p>
-              <ul className="space-y-2">
-                {[
-                  "Full participation in all 3 annual productions",
-                  "Principal & corporate spots earned by audition",
-                  "Compensation per show performed",
-                  "Year-end net profit share",
-                  "Talent management pipeline access",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm font-dm text-cream/70">
-                    <span className="text-red mt-0.5">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
+              {AUDITION_TIERS.map((tier) => (
+                <div
+                  key={tier.name}
+                  className="group relative bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
+                >
+                  <span
+                    className="block h-0.5 w-8 rounded-full mb-5"
+                    style={{ background: `linear-gradient(90deg, ${tier.color}, ${tier.color}00)` }}
+                  />
+                  <div
+                    className="font-dm text-xs font-semibold tracking-widest uppercase mb-3"
+                    style={{ color: tier.color }}
+                  >
+                    {tier.ages}
+                  </div>
+                  <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">
+                    {tier.name}
+                  </h3>
+                  <p className="font-dm text-cream/70 text-sm leading-relaxed mb-5">
+                    {tier.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {tier.requirements.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm font-dm text-cream/65">
+                        <span className="mt-0.5" style={{ color: tier.color }}>✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Fee philosophy note */}
-          <div className="mt-10 p-6 rounded-2xl border border-white/10 bg-white/5 max-w-3xl mx-auto text-center">
-            <p className="font-dm text-cream/60 text-sm leading-relaxed">
-              <span className="text-cream font-semibold">Full compensation and payout details are covered when you become a company member.</span>{" "}
-              Membership fees go directly toward development, choreography, production costs, and costumes — so that EPC can compensate its instructors,
-              staff, and performing artists at a professional standard. You&apos;re not paying to be in the company. You&apos;re investing in the infrastructure
-              that makes professional performance possible.
+          {/* Fee philosophy note + link to full details */}
+          <p className="mt-12 max-w-2xl mx-auto text-center font-dm text-cream/55 text-sm leading-relaxed">
+            Membership fees go directly toward development, choreography, production costs, and costumes — so that EPC can compensate its instructors,
+            staff, and performing artists at a professional standard. You&apos;re not paying to be in the company. You&apos;re investing in the infrastructure
+            that makes professional performance possible.
+          </p>
+          <div className="mt-8 text-center">
+            <Link
+              href="/details"
+              className="inline-block px-8 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.4)] transition-all duration-200"
+            >
+              See Full Fees, Compensation &amp; Schedule →
+            </Link>
+            <p className="mt-3 font-dm text-cream/40 text-xs">
+              Every track, fee, and payout — laid out on the Company Details page.
             </p>
           </div>
         </div>
       </section>
 
       {/* Training schedule */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
@@ -314,9 +270,9 @@ export default function CompanyPage() {
                 TRAINING <span className="text-gradient">SCHEDULE</span>
               </h2>
               <p className="font-dm text-cream/60 text-sm mb-8 leading-relaxed">
-                All members train on a weekly schedule throughout each 3-month production cycle.
+                All members train on a weekly schedule throughout each production cycle.
                 Skaters and dancers each have their own session structure — with intentional
-                overlap built in for the crossover performances that define every EPC show.
+                overlap built in for the crossover moments that define every EPC production.
               </p>
 
               <p className="font-dm text-cream/65 text-sm leading-relaxed">
@@ -334,7 +290,7 @@ export default function CompanyPage() {
                   {productionCycle.map((cycle) => (
                     <div
                       key={cycle.show}
-                      className="flex items-center gap-4 p-4 rounded-xl border border-white/10 bg-white/5"
+                      className="flex items-center gap-4 py-3"
                     >
                       <div className="w-1 h-12 rounded-full bg-gradient-brand flex-shrink-0" />
                       <div>
@@ -372,7 +328,7 @@ export default function CompanyPage() {
       <Membership />
 
       {/* Company Experiences & Member Perks */}
-      <section className="py-20 border-t border-white/10 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(123,47,190,0.1)_0%,_transparent_65%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,_rgba(194,24,91,0.07)_0%,_transparent_60%)] pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -404,7 +360,7 @@ export default function CompanyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-bebas text-5xl text-cream tracking-widest mb-4">
             READY TO <span className="text-gradient">EVOLVE?</span>
@@ -414,7 +370,7 @@ export default function CompanyPage() {
             to know when dates are announced.
           </p>
           <Link
-            href="/auditions#register"
+            href="/shows#register"
             className="inline-block px-10 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.4)] transition-all duration-200"
           >
             Register Interest

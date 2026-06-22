@@ -44,7 +44,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Rink Partners */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-purple flex-shrink-0" />
@@ -58,24 +58,26 @@ export default function PartnershipsPage() {
             serious and growing performer community.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-            {RINK_PARTNER_BENEFITS.map((benefit, i) => (
-              <div
-                key={benefit.title}
-                className="p-6 rounded-2xl bg-[#13101c] hover:-translate-y-1 transition-all duration-200 h-full"
-              >
+          <div className="mb-8 rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+              {RINK_PARTNER_BENEFITS.map((benefit, i) => (
                 <div
-                  className="h-0.5 w-8 rounded-full mb-4"
-                  style={{ background: `linear-gradient(90deg, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}00)` }}
-                />
-                <h4 className="font-bebas text-lg text-cream tracking-widest mb-2">
-                  {benefit.title}
-                </h4>
-                <p className="font-dm text-cream/60 text-xs leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+                  key={benefit.title}
+                  className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
+                >
+                  <div
+                    className="h-0.5 w-8 rounded-full mb-4"
+                    style={{ background: `linear-gradient(90deg, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}00)` }}
+                  />
+                  <h4 className="font-bebas text-lg text-cream tracking-widest mb-2">
+                    {benefit.title}
+                  </h4>
+                  <p className="font-dm text-cream/60 text-xs leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="ml-6">
@@ -87,7 +89,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Corporate Partners */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-magenta flex-shrink-0" />
@@ -106,8 +108,8 @@ export default function PartnershipsPage() {
                 key={tier.name}
                 className={`h-full p-7 rounded-2xl flex flex-col ${
                   i === 1
-                    ? "border border-gold/40 bg-gold/5 shadow-[0_0_40px_rgba(245,200,66,0.08)]"
-                    : "border border-white/10 bg-white/5"
+                    ? "ring-1 ring-gold/40 bg-gold/[0.06] shadow-[0_0_40px_rgba(245,200,66,0.08)]"
+                    : "bg-white/[0.03]"
                 }`}
               >
                 <p className="text-xs font-dm text-cream/40 tracking-widest uppercase mb-1">
@@ -144,7 +146,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Additional partnership types */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-1.5 h-8 rounded-full bg-red flex-shrink-0" />
@@ -152,13 +154,13 @@ export default function PartnershipsPage() {
             <div className="h-px flex-1 bg-white/10" />
           </div>
           <p className="font-dm text-cream/65 text-base leading-relaxed max-w-2xl ml-6">
-            We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC. Use the form below and tell us what you have in mind.
+            We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
           </p>
         </div>
       </section>
 
       {/* CTA banner */}
-      <section className="py-16 border-t border-white/10">
+      <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand" />

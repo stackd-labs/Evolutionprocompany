@@ -7,14 +7,12 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const links = [
+  { label: "Home", href: "/" },
+  { label: "Ascend", href: "/shows" },
+  { label: "Join EPC", href: "/company" },
+  { label: "EPC Experience", href: "/experience" },
+  { label: "Corporate Events", href: "/events" },
   { label: "About", href: "/about" },
-  { label: "Shows", href: "/shows" },
-  { label: "Events", href: "/events" },
-  { label: "Auditions", href: "/auditions" },
-  { label: "Company", href: "/company" },
-  { label: "Partnerships", href: "/partnerships" },
-  { label: "Work With Us", href: "/work-with-us" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -83,8 +81,8 @@ export default function Nav() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href="/auditions#register"
-              className="px-5 py-2.5 bg-gold text-dark font-dm font-semibold text-sm rounded-lg hover:bg-gold/90 hover:shadow-[0_0_20px_rgba(245,200,66,0.4)] transition-all duration-200"
+              href="/shows#register"
+              className="cta-sheen px-5 py-2.5 bg-gold text-dark font-dm font-semibold text-sm rounded-lg hover:bg-gold/90 hover:shadow-[0_0_20px_rgba(245,200,66,0.4)] transition-all duration-200"
             >
               Apply Now
             </Link>
@@ -126,7 +124,7 @@ export default function Nav() {
               </Link>
             ))}
             <Link
-              href="/auditions#register"
+              href="/shows#register"
               onClick={() => setMenuOpen(false)}
               className="mt-4 px-5 py-3 bg-gold text-dark font-dm font-semibold text-sm rounded-lg text-center"
             >

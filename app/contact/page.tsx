@@ -14,7 +14,7 @@ const quickLinks = [
   {
     label: "Audition Interest",
     description: "Register for upcoming DMV auditions",
-    href: "/auditions#register",
+    href: "/shows#register",
     color: "#7B2FBE",
   },
   {
@@ -55,33 +55,35 @@ export default function ContactPage() {
       </section>
 
       {/* Quick links */}
-      <section className="pb-16 border-b border-white/10">
+      <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="font-dm text-cream/40 text-xs tracking-widest uppercase text-center mb-6">
             Looking for something specific?
           </p>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {quickLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="group flex items-center gap-4 p-5 rounded-xl border border-white/10 bg-white/5 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <div
-                  className="w-2 h-8 rounded-full flex-shrink-0"
-                  style={{ background: link.color }}
-                />
-                <div>
-                  <p className="font-bebas text-lg text-cream tracking-widest leading-none">
-                    {link.label}
-                  </p>
-                  <p className="font-dm text-cream/50 text-xs mt-0.5">
-                    {link.description}
-                  </p>
-                </div>
-                <span className="ml-auto text-cream/30 group-hover:text-cream/60 transition-colors">→</span>
-              </Link>
-            ))}
+          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid sm:grid-cols-3 gap-px bg-white/[0.06]">
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="group flex items-center gap-4 bg-[#0c0913] p-6 hover:bg-white/[0.02] transition-colors duration-200"
+                >
+                  <div
+                    className="w-2 h-8 rounded-full flex-shrink-0"
+                    style={{ background: link.color }}
+                  />
+                  <div>
+                    <p className="font-bebas text-lg text-cream tracking-widest leading-none">
+                      {link.label}
+                    </p>
+                    <p className="font-dm text-cream/50 text-xs mt-0.5">
+                      {link.description}
+                    </p>
+                  </div>
+                  <span className="ml-auto text-cream/30 group-hover:text-cream/60 transition-colors">→</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -118,33 +120,6 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs font-dm text-cream/40 tracking-widest uppercase mb-1">Response Time</p>
                   <p className="font-dm text-cream/80 text-sm">Within 48 hours for serious inquiries</p>
-                </div>
-                <div>
-                  <p className="text-xs font-dm text-cream/40 tracking-widest uppercase mb-1">Auditions</p>
-                  <p className="font-dm text-cream/80 text-sm">
-                    Register interest at{" "}
-                    <Link href="/auditions#register" className="text-gold hover:underline">
-                      the auditions page
-                    </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-dm text-cream/40 tracking-widest uppercase mb-1">Careers</p>
-                  <p className="font-dm text-cream/80 text-sm">
-                    View open roles at{" "}
-                    <Link href="/work-with-us" className="text-gold hover:underline">
-                      Work With Us
-                    </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-dm text-cream/40 tracking-widest uppercase mb-1">Partnerships</p>
-                  <p className="font-dm text-cream/80 text-sm">
-                    Rinks, sponsors & more at{" "}
-                    <Link href="/partnerships" className="text-gold hover:underline">
-                      partnerships page
-                    </Link>
-                  </p>
                 </div>
               </div>
 

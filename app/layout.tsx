@@ -24,10 +24,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://epcperform.com"),
   icons: { icon: "/logo-circle.png" },
   title: "Evolution Production Company | Where Ice Meets Dance",
   description:
-    "Evolution Production Company (EPC) is a hybrid touring ice and dance performance company based in the Washington DC area. Professional training, three productions per year, and real career opportunities.",
+    "Evolution Production Company (EPC) is an immersive performance company blending skating, dance, and movement into continuous live experiences in the DMV. Ascend — the inaugural EPC production — premieres September 2026.",
   keywords: [
     "ice skating",
     "dance performance",
@@ -44,6 +45,20 @@ export const metadata: Metadata = {
     title: "Evolution Production Company",
     description: "Where Ice Meets Dance. Where Art Becomes Legend.",
     type: "website",
+    images: [
+      {
+        url: "/ascend-flyer.png",
+        width: 1536,
+        height: 1024,
+        alt: "Ascend — The Inaugural EPC Production, September 2026",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evolution Production Company",
+    description: "Where Ice Meets Dance. Where Art Becomes Legend.",
+    images: ["/ascend-flyer.png"],
   },
 };
 

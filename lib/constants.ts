@@ -10,41 +10,74 @@ export const BRAND = {
   },
 };
 
-export const SHOWS = [
+// The inaugural EPC production — the centerpiece of the founding season.
+export const ASCEND = {
+  theme: "Ascend",
+  tagline: "The Inaugural EPC Production",
+  performanceWindow: "September 2026",
+  status: "Founding Season",
+  color: "#C2185B",
+  summary:
+    "A continuous live performance experience blending skating, dance, and movement. No recital format, no stop-and-start routines — one immersive evening that flows from beginning to end.",
+  overview:
+    "Ascend is the first full production from Evolution Production Company — an immersive, continuous performance staged in the round. Skaters, dancers, and movement artists share the same space, the same story, and the same momentum, performed for an audience seated close enough to feel it. It is the launch of everything EPC is building.",
+  details: [
+    {
+      label: "Concept",
+      value:
+        "One continuous, immersive performance blending skating, dance, and movement into a single unbroken experience.",
+    },
+    {
+      label: "Auditions",
+      value:
+        "Founding-roster auditions are open by interest registration now. Skaters, dancers, movement artists, and specialty performers are encouraged to register.",
+    },
+    {
+      label: "Timeline",
+      value:
+        "Founding company forms in 2026, with the inaugural performance in September 2026.",
+    },
+    {
+      label: "Company Participation",
+      value:
+        "Every company track — Youth, Junior, Company Artists, and Flex — takes part in Ascend. All members perform; principal roles are earned through audition.",
+    },
+    {
+      label: "Tickets",
+      value:
+        "Ticket information will be announced ahead of the September 2026 premiere. Join the company list to be first to know.",
+    },
+    {
+      label: "Location",
+      value:
+        "Staged in the round in the Washington DC area (DMV). The specific venue is announced ahead of the September 2026 premiere.",
+    },
+  ],
+};
+
+// Productions that follow the inaugural season — kept intentionally minimal.
+export const FUTURE_PRODUCTIONS = [
   {
-    season: "Spring",
-    performanceMonth: "April",
-    trainingMonths: "January – March",
-    description:
-      "Our opening showcase of the year. A high-energy fusion of contemporary dance and precision ice work that sets the tone for the season.",
-    theme: "Ignite",
-    color: "#7B2FBE",
-  },
-  {
-    season: "Summer",
-    performanceMonth: "August",
-    trainingMonths: "May – July",
-    description:
-      "Our most ambitious production. Full theatrical storytelling with original choreography, live vocals, and touring elements.",
-    theme: "Ascend",
-    color: "#C2185B",
-  },
-  {
-    season: "Holiday",
-    performanceMonth: "December",
-    trainingMonths: "September – November",
-    description:
-      "The signature year-end spectacular. Multi-act production featuring the full company, guest artists, and audience favorites.",
     theme: "Illuminate",
+    window: "Winter 2026",
+    description:
+      "A year-end immersive production carrying the founding company into the holiday season.",
     color: "#E8334A",
+  },
+  {
+    theme: "Ignite",
+    window: "Spring 2027",
+    description:
+      "A high-energy continuation of the EPC experience, building on the momentum of the founding season.",
+    color: "#7B2FBE",
   },
 ];
 
 export const STATS = [
-  { value: "3", label: "Productions Per Year" },
-  { value: "3", label: "Company Tracks" },
-  { value: "6+", label: "Age Eligible" },
-  { value: "3", label: "Phase Growth Plan" },
+  { value: "Sept '26", label: "Inaugural Production" },
+  { value: "4", label: "Company Tracks" },
+  { value: "All Ages", label: "Performers Welcome" },
+  { value: "DMV", label: "Founding Region" },
 ];
 
 export const DISCIPLINES = [
@@ -56,41 +89,72 @@ export const DISCIPLINES = [
   "Other",
 ];
 
+// Benefits shown before pricing — what every membership includes.
+export const MEMBERSHIP_INCLUDES = [
+  {
+    title: "Rehearsals",
+    description:
+      "Regular company rehearsals and performance preparation, built around the immersive production model.",
+  },
+  {
+    title: "Casting Opportunities",
+    description:
+      "Every member performs. Ensemble and principal casting is earned through the audition process.",
+  },
+  {
+    title: "Production Participation",
+    description:
+      "A role in EPC's live productions — beginning with Ascend, the inaugural founding-season experience.",
+  },
+  {
+    title: "Company Development",
+    description:
+      "Choreography, conditioning, stage presence, and technique coaching that grows you as a performer.",
+  },
+  {
+    title: "Community Events",
+    description:
+      "Company gatherings, creative experiences, and member events that build the culture of EPC.",
+  },
+  {
+    title: "Performance Opportunities",
+    description:
+      "Real stage time through EPC's touring production model — multiple performances each cycle, not a single end-of-year recital.",
+  },
+];
+
 export const MEMBERSHIP_TIERS = [
   {
     name: "Company Member",
-    price: "$175/mo",
-    description: "The core EPC experience — productions, rehearsals, creative community, and real performance opportunities.",
+    price: "$200/mo",
+    description: "EPC operates on a unified membership model — all accepted members pay the same monthly fee regardless of age or division, and every member is included in company productions.",
     features: [
-      "Full participation in EPC productions and showcases",
-      "Company rehearsals and performance preparation",
-      "Ensemble and principal casting consideration",
-      "Performance-focused choreography and staging",
-      "Acting, storytelling, and stage presentation development",
-      "Collaborative work with skaters, dancers, and artists across disciplines",
-      "Select workshops, master classes, and guest experiences",
-      "Features in EPC media and promotional content",
-      "Company retreats, outings, and community gatherings",
-      "First access to production announcements, auditions, and opportunities",
+      "Rehearsals",
+      "Production Participation",
+      "Performance Opportunities",
+      "Artistic Development",
+      "Casting Opportunities",
+      "Community Events",
+      "Company Gatherings",
+      "Production Preparation",
+      "Company Communications & Resources",
     ],
     featured: false,
   },
   {
     name: "Professional Development Track",
-    price: "$225/mo",
-    description: "An optional add-on for Company Members who want additional industry-focused opportunities and career development experiences. Designed for performers interested in expanding their exposure to professional opportunities, creative leadership, and industry connections.",
-    castingNote: "This upgrade does not affect casting. All Company Members may be considered for principal roles based on performance readiness and production needs.",
+    price: "$150 / cycle",
+    description: "An optional upgrade for performers who want to expand their opportunities beyond standard company membership.",
+    castingNote: "Participation does not impact casting. All company members remain eligible for Ensemble, Featured, and Principal opportunities.",
     features: [
-      "All Company Member benefits",
-      "Priority consideration for corporate and specialty performances",
-      "Professional development workshops and industry sessions",
-      "NIL partnerships and brand collaboration opportunities",
-      "Talent development guidance and portfolio building",
-      "Professional media features and performance reel opportunities",
-      "Greater visibility in company promotional content",
-      "Leadership and mentorship opportunities within EPC",
-      "Creative contribution to select productions and projects",
-      "Priority access to workshops, intensives, and special events",
+      "Professional Development Workshops",
+      "Industry Sessions",
+      "Corporate Performance Opportunities",
+      "Portfolio Development",
+      "Professional Media Opportunities",
+      "Leadership Opportunities",
+      "Mentorship Opportunities",
+      "Priority Access to Select Workshops & Events",
     ],
     featured: true,
   },
@@ -100,12 +164,12 @@ export const WHY_JOIN = [
   {
     title: "Paid Performance Opportunities",
     description:
-      "Senior Company performers (12+) may be selected for paid performance opportunities through EPC productions, special events, and company projects. EPC is designed to create real-world performance experiences for artists who are ready to take their craft seriously.",
+      "Company Artists (16+) may be selected for paid performance opportunities through EPC productions, special events, and company projects. EPC is designed to create real-world performance experiences for artists who are ready to take their craft seriously.",
   },
   {
     title: "Professional Development",
     description:
-      "Train with experienced choreographers and industry professionals in choreography, performance quality, conditioning, flexibility, and technique. Each division — Flex, Junior, and Senior — is structured to support growth, confidence, and stage-ready performance skills.",
+      "Train with experienced choreographers and industry professionals in choreography, performance quality, conditioning, flexibility, and technique. Every track — Youth, Junior, Company Artists, and Flex — is structured to support growth, confidence, and stage-ready performance skills.",
   },
   {
     title: "Talent Pathways",
@@ -140,53 +204,90 @@ export const GROWTH_PHASES = [
 
 export const AUDITION_TIERS = [
   {
-    name: "Junior Company",
-    ages: "Ages 6–11",
+    name: "Youth Company",
+    ages: "11 & Under",
     description:
-      "Full company membership for younger performers. Juniors train and perform alongside the Senior Company with age-appropriate roles and a dedicated development curriculum.",
+      "The Youth Company is designed for young performers interested in developing performance skills while participating in EPC productions. Members may include skaters, dancers, movement artists, and emerging performers who demonstrate enthusiasm, commitment, and a willingness to learn.",
     requirements: [
-      "Ages 6–11 at time of audition",
+      "Ages 11 and under at time of audition",
       "Basic skating or dance experience preferred",
       "Solo (60 seconds) required only for those seeking principal consideration",
       "Parent/guardian consent required",
-      "Commitment to full training cycle",
+      "Commitment to the production cycle",
     ],
-    payout: "Priority consideration for Senior Company auditions upon age or skill readiness",
     color: "#7B2FBE",
   },
   {
-    name: "Senior Company",
-    ages: "Ages 12+",
+    name: "Junior Company",
+    ages: "Ages 12–15",
     description:
-      "The advanced level of EPC. Senior members commit to the full season, perform in all productions, and earn real compensation. Principal and corporate spots are earned through audition — all members perform.",
+      "The Junior Company is designed for developing performers seeking greater artistic responsibility and performance opportunities. Members take part in rehearsals, productions, and company activities while continuing to develop technical and performance skills.",
     requirements: [
-      "Ages 12+ at time of audition",
-      "Intermediate to advanced skill level preferred",
+      "Ages 12–15 at time of audition",
+      "Intermediate skill level preferred",
       "Solo (90 seconds) required only for those seeking principal consideration",
-      "Resume or performance history helpful, not required",
+      "Parent/guardian consent required",
       "Full season commitment required",
     ],
-    payout: "Compensation per show performed and year-end net profit share",
     color: "#C2185B",
   },
   {
-    name: "Flex Track",
-    ages: "All Ages",
+    name: "Company Artists",
+    ages: "Ages 16+",
     description:
-      "For performers who are new to skating or dance and building foundational skills. Flex members perform in all three annual productions in ensemble roles. Principal role eligibility is skill-based — as technique and stage readiness develop, so does your casting opportunity.",
+      "Company Artists participate fully in EPC productions, rehearsals, and company opportunities — skaters, dancers, movement artists, specialty performers, and multidisciplinary artists. They help shape the culture, artistic direction, and future growth of EPC.",
+    requirements: [
+      "Ages 16+ at time of audition",
+      "Intermediate to advanced skill level preferred",
+      "Solo (90 seconds) required only for those seeking principal consideration",
+      "Resume or performance history helpful, not required",
+      "Parent/guardian consent required for performers under 18",
+      "Full season commitment required",
+    ],
+    color: "#E8334A",
+  },
+  {
+    name: "Flex Track",
+    ages: "Flexible Commitment",
+    description:
+      "The Flex Track is for individuals who wish to remain connected to EPC without committing to full production participation. Flex Track participants are not required to perform, and may have different participation requirements depending on the opportunity.",
     requirements: [
       "Open to all ages and experience levels",
-      "No solo required — bring your current skill level",
+      "No production or performance commitment required",
+      "No solo or audition piece required",
       "Parent/guardian consent required for minors",
-      "Weekly development sessions building toward production readiness",
-      "Performs in ensemble roles across all 3 productions",
+      "Access to training, community, and development opportunities",
     ],
-    payout: "Development track — ensemble performer in all productions, principal-eligible as skills advance",
-    color: "#E8334A",
+    color: "#F5C842",
   },
 ];
 
 export const FAQ = [
+  {
+    question: "Where are performances held?",
+    answer: "Throughout the DMV region.",
+  },
+  {
+    question: "Do I need to live in Virginia?",
+    answer: "No.",
+  },
+  {
+    question: "Does EPC provide housing?",
+    answer: "Not currently.",
+  },
+  {
+    question: "Does EPC provide travel assistance?",
+    answer: "Not during the founding season.",
+  },
+  {
+    question: "Does EPC sponsor visas?",
+    answer: "Not currently.",
+  },
+  {
+    question: "Can out-of-state performers participate?",
+    answer:
+      "Yes, provided they can meet rehearsal and performance requirements.",
+  },
   {
     question: "Do I need to skate AND dance?",
     answer:
@@ -200,7 +301,7 @@ export const FAQ = [
   {
     question: "What is the Flex Track?",
     answer:
-      "The Flex Track is a development pathway for performers who are new to skating or dance. It's a structured program with a clear path into Junior or Senior Company once foundational skills are established.",
+      "The Flex Track is a flexible participation pathway for performers who need a lower commitment or are new to skating or dance. It offers ensemble performance opportunities with a clear path into the age-based company tracks as foundational skills are established.",
   },
   {
     question: "What does training look like week-to-week?",
@@ -218,9 +319,9 @@ export const FAQ = [
       "Auditions are coming to the DMV area soon. Register your interest now to be first notified of dates, locations, and requirements.",
   },
   {
-    question: "Can Junior Company members move to Senior Company?",
+    question: "Can members move between company tracks as they grow?",
     answer:
-      "Yes. Juniors who age into the 12+ range or demonstrate Senior-level skill are given priority consideration in Senior Company auditions.",
+      "Yes. EPC's tracks are age-based — Youth Company (11 & under), Junior Company (12–15), and Company Artists (16+). As members age up or demonstrate readiness, they move into the next track, and Flex members can advance into an age-based track as their skills develop.",
   },
   {
     question: "Do I have to leave my current studio, club, or team to join EPC?",
@@ -248,6 +349,59 @@ export const FAQ = [
       "Yes. EPC plans to offer workshops, gatherings, outings, and additional creative experiences as the company continues to grow.",
   },
 ];
+
+export const WHAT_MAKES_DIFFERENT = [
+  {
+    title: "Continuous Performance",
+    color: "#7B2FBE",
+    points: ["No recital format.", "No stop-and-start routines.", "One immersive experience."],
+  },
+  {
+    title: "Multi-Discipline Cast",
+    color: "#C2185B",
+    points: ["Skating.", "Dance.", "Movement."],
+  },
+  {
+    title: "Up-Close Audience Experience",
+    color: "#E8334A",
+    points: ["Immersive arena staging.", "On-ice seating.", "Intimate performance zones."],
+  },
+];
+
+export const SEEKING = [
+  {
+    title: "Figure Skaters",
+    description: "Skaters ready to bring technique and artistry to a continuous live production.",
+    color: "#7B2FBE",
+  },
+  {
+    title: "Dancers",
+    description: "Dancers of all styles who want to perform inside an immersive, moving experience.",
+    color: "#C2185B",
+  },
+  {
+    title: "Movement Artists",
+    description: "Performers whose craft lives in motion, atmosphere, and physical storytelling.",
+    color: "#E8334A",
+  },
+  {
+    title: "Specialty Performers",
+    description: "Distinctive performers with a unique skill that elevates the experience.",
+    color: "#F5C842",
+  },
+];
+
+export const FOUNDING_SEASON = {
+  year: "2026",
+  intro:
+    "Every member joining during the inaugural season becomes a Founding Member of Evolution Production Company.",
+  benefits: [
+    "Founding Member Recognition",
+    "Locked-In Rates Through 2027",
+    "Priority Opportunities",
+    "Program Recognition",
+  ],
+};
 
 export const RINK_PARTNER_BENEFITS = [
   {

@@ -139,13 +139,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
-            href="/auditions#register"
+            href="/shows#register"
             className="px-8 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.5)] transition-all duration-200 tracking-wide"
           >
             Audition Now
           </Link>
           <Link
-            href="#about"
+            href="/about"
             className="px-8 py-4 border border-cream/30 text-cream font-dm font-medium text-base rounded-lg hover:border-cream/60 hover:bg-white/5 transition-all duration-200 tracking-wide"
           >
             Learn More

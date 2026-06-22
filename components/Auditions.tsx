@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
 import { AUDITION_TIERS } from "@/lib/constants";
 
 function FadeUp({
@@ -39,8 +38,8 @@ export default function Auditions() {
               Join the Company
             </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
-              THREE TRACKS.{" "}
-              <span className="text-gradient">ONE STANDARD.</span>
+              OUR COMPANY{" "}
+              <span className="text-gradient">STRUCTURE</span>
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
               Every EPC member earns their place through audition. Every member
@@ -51,8 +50,8 @@ export default function Auditions() {
 
         <div className="h-px w-full bg-gradient-to-r from-transparent via-purple/40 to-transparent mb-12" />
 
-        {/* Three tracks — clean teaser */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
+        {/* Company tracks — clean teaser */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {AUDITION_TIERS.map((tier, i) => (
             <FadeUp key={tier.name} delay={i * 0.12}>
               <div
@@ -78,39 +77,6 @@ export default function Auditions() {
             </FadeUp>
           ))}
         </div>
-
-        {/* CTA Banner */}
-        <FadeUp delay={0.4}>
-          <div className="relative overflow-hidden rounded-2xl p-8 md:p-12 bg-gradient-to-r from-purple via-magenta to-red text-center">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1)_0%,_transparent_70%)]" />
-            <div className="relative z-10">
-              <p className="font-cormorant italic text-cream/80 text-xl mb-3">
-                Auditions Coming to the Washington DC Area
-              </p>
-              <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
-                REGISTER YOUR INTEREST TODAY
-              </h3>
-              <p className="font-dm text-cream/80 text-base mb-8 max-w-md mx-auto">
-                Be the first to know when audition dates drop. Complete the
-                interest form and we&apos;ll reach out directly.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/auditions#register"
-                  className="inline-block px-8 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.5)] transition-all duration-200"
-                >
-                  Register Interest
-                </Link>
-                <Link
-                  href="/auditions"
-                  className="inline-block px-8 py-4 border border-cream/30 text-cream font-dm font-semibold text-base rounded-lg hover:border-cream/60 hover:bg-white/5 transition-all duration-200"
-                >
-                  Full Details →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </FadeUp>
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Affiliates — Primary Push */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
@@ -51,13 +51,10 @@ export default function WorkWithUsPage() {
               </h2>
               <div className="space-y-4 font-dm text-cream/70 text-sm leading-relaxed">
                 <p>
-                  An EPC affiliate is someone who believes in what we are building and helps spread the word. You do not need to be a performer. You do not need to work in dance or skating. You just need to know people — and be willing to connect them to us.
+                  An EPC affiliate is someone who believes in what we are building and helps spread the word. You do not need to be a performer, or work in dance or skating. You just need to know people — and be willing to connect them to us.
                 </p>
                 <p>
                   Affiliates share EPC with their networks: on social media, in their studios, at their gyms, in their communities. When someone you refer joins or partners with EPC, you earn a commission. Simple, flexible, and built to reward real relationships.
-                </p>
-                <p>
-                  We are in early growth mode, which means affiliates who get in now will have the most to gain as we scale. This is not a passive link-share — this is a real opportunity to grow with a company that is going somewhere.
                 </p>
               </div>
             </div>
@@ -95,7 +92,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Other Ways to Connect */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="font-cormorant italic text-gold text-lg tracking-widest mb-3">Other Ways In</p>
@@ -104,44 +101,46 @@ export default function WorkWithUsPage() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
-            {[
-              {
-                title: "Instructors & Choreographers",
-                color: "#7B2FBE",
-                body: "We are building a coaching roster of skating and dance instructors, ice choreographers, and movement directors who work at a professional level. If you teach or create at a high standard, we want to meet you.",
-              },
-              {
-                title: "Operations & Admin",
-                color: "#E8334A",
-                body: "Behind every production is a team that makes it run — scheduling, communications, logistics, and member support. We are looking for detail-oriented people who can help us grow a real organization with real systems.",
-              },
-              {
-                title: "Outreach & Growth",
-                color: "#C2185B",
-                body: "Community outreach, social media, event promotion, affiliate coordination — if you understand how to grow an audience and build relationships, there is a role for you here. EPC is expanding and we need people who know how to open doors.",
-              },
-              {
-                title: "Volunteers & Freelancers",
-                color: "#F5C842",
-                body: "Passionate about performing arts and want to be part of something real? Whether you volunteer at productions or take on freelance creative work — videography, photography, design — we build lasting relationships with people we trust.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-dark p-8">
-                <div
-                  className="h-0.5 w-8 rounded-full mb-5"
-                  style={{ background: item.color }}
-                />
-                <h3 className="font-bebas text-2xl text-cream tracking-widest mb-3">{item.title}</h3>
-                <p className="font-dm text-cream/60 text-sm leading-relaxed">{item.body}</p>
-              </div>
-            ))}
+          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
+              {[
+                {
+                  title: "Instructors & Choreographers",
+                  color: "#7B2FBE",
+                  body: "We are building a coaching roster of skating and dance instructors, ice choreographers, and movement directors who work at a professional level. If you teach or create at a high standard, we want to meet you.",
+                },
+                {
+                  title: "Operations & Admin",
+                  color: "#E8334A",
+                  body: "Behind every production is a team that makes it run — scheduling, communications, logistics, and member support. We are looking for detail-oriented people who can help us grow a real organization with real systems.",
+                },
+                {
+                  title: "Outreach & Growth",
+                  color: "#C2185B",
+                  body: "Community outreach, social media, event promotion, affiliate coordination — if you understand how to grow an audience and build relationships, there is a role for you here. EPC is expanding and we need people who know how to open doors.",
+                },
+                {
+                  title: "Volunteers & Freelancers",
+                  color: "#F5C842",
+                  body: "Passionate about performing arts and want to be part of something real? Whether you volunteer at productions or take on freelance creative work — videography, photography, design — we build lasting relationships with people we trust.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="bg-[#0c0913] p-8">
+                  <div
+                    className="h-0.5 w-8 rounded-full mb-5"
+                    style={{ background: item.color }}
+                  />
+                  <h3 className="font-bebas text-2xl text-cream tracking-widest mb-3">{item.title}</h3>
+                  <p className="font-dm text-cream/60 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16 border-t border-white/10">
+      <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand" />
