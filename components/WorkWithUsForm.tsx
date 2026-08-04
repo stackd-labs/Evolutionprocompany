@@ -63,14 +63,11 @@ export default function WorkWithUsForm() {
     "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-cream font-dm text-sm placeholder-cream/30 focus:outline-none focus:border-gold/50 transition-all duration-200";
 
   return (
-    <section id="connect" className="py-20 border-t border-white/10 bg-dark">
+    <section id="connect" className="py-14 md:py-20 border-t border-white/10 bg-dark">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="font-cormorant italic text-gold text-lg tracking-widest mb-3">
-            Quick Intro
-          </p>
           <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-            LET&apos;S <span className="text-gradient">CONNECT</span>
+            LET&apos;S CONNECT
           </h2>
           <p className="mt-3 font-dm text-cream/55 text-sm max-w-sm mx-auto">
             Not ready for a full application? Drop us a quick intro — name,

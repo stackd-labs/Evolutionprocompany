@@ -63,15 +63,12 @@ export default function EventsPage() {
       </section>
 
       {/* What We Do */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              What We Do
-            </p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
               ENTERTAINMENT THAT{" "}
-              <span className="text-gradient">MOVES AN AUDIENCE</span>
+              MOVES AN AUDIENCE
             </h2>
           </div>
 
@@ -83,7 +80,7 @@ export default function EventsPage() {
             ].map((item, i, arr) => (
               <div key={item.num}>
                 <div className="grid md:grid-cols-[120px_1fr] gap-8 py-10 items-start">
-                  <div className="font-bebas text-5xl md:text-7xl lg:text-8xl text-gradient leading-none select-none">
+                  <div className="font-bebas text-5xl md:text-7xl lg:text-8xl text-cream/20 leading-none select-none">
                     {item.num}
                   </div>
                   <div className="pt-2 md:pt-4">
@@ -108,29 +105,22 @@ export default function EventsPage() {
       <section>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Where We Perform
-            </p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-4">
               TYPES OF EVENTS{" "}
-              <span className="text-gradient">WE WORK WITH</span>
+              WE WORK WITH
             </h2>
             <p className="font-dm text-cream/55 text-base max-w-xl">
               EPC performers can be featured at a variety of events and productions.
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
               {eventTypes.map((type) => (
                 <div
                   key={type.title}
                   className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-4"
-                    style={{ background: `linear-gradient(90deg, ${type.color}, ${type.color}00)` }}
-                  />
                   <h3 className="font-bebas text-xl text-cream tracking-widest mb-2">
                     {type.title}
                   </h3>

@@ -28,19 +28,16 @@ function FadeUp({
 
 export default function About() {
   return (
-    <section id="about" className="relative py-16 md:py-20 bg-dark overflow-hidden">
+    <section id="about" className="relative py-14 md:py-20 md:py-20 bg-dark overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,_rgba(123,47,190,0.08)_0%,_transparent_55%)] pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center mb-12">
           {/* Left: text */}
           <div>
             <FadeUp>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Who We Are
-              </p>
               <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest leading-tight mb-6">
                 BUILT FOR{" "}
-                <span className="text-gradient">PERFORMERS</span>
+                PERFORMERS
                 <br />
                 WHO MEAN BUSINESS
               </h2>
@@ -87,10 +84,10 @@ export default function About() {
                 {STATS.map((stat) => (
                   <div
                     key={stat.label}
-                    className="bg-dark/60 backdrop-blur-md rounded-xl p-4"
+                    className="bg-dark/60 backdrop-blur-md rounded-2xl p-4"
                     style={{ boxShadow: "inset 0 0 0 1px rgba(123,47,190,0.35)" }}
                   >
-                    <div className="font-bebas text-4xl text-gradient leading-none mb-0.5">
+                    <div className="font-bebas text-4xl text-gold leading-none mb-0.5">
                       {stat.value}
                     </div>
                     <div className="font-dm text-cream/70 text-xs tracking-wide uppercase leading-tight">
@@ -120,7 +117,7 @@ export default function About() {
             ].map((photo) => (
               <div
                 key={photo.src}
-                className="relative h-40 md:h-56 rounded-xl overflow-hidden"
+                className="relative h-40 md:h-56 rounded-2xl overflow-hidden"
               >
                 <Image
                   src={photo.src}

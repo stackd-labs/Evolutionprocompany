@@ -187,10 +187,9 @@ export default function ApplicationForm() {
   }, []);
 
   return (
-    <section id="apply" className="py-16 border-t border-white/10 text-center">
-      <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">Formal Application</p>
+    <section id="apply" className="py-14 md:py-20 border-t border-white/10 text-center">
       <h2 className="font-bebas text-4xl text-cream tracking-widest mb-4">
-        READY TO <span className="text-gradient">JOIN THE TEAM?</span>
+        READY TO JOIN THE TEAM?
       </h2>
       <p className="font-dm text-cream/55 text-sm max-w-md mx-auto mb-8">
         Submit your background, portfolio, and tell us exactly what you&apos;d build at EPC.

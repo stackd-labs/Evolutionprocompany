@@ -31,7 +31,7 @@ export default function AscendShowcase() {
   return (
     <section
       id="ascend"
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-14 md:py-20 md:py-24 overflow-hidden"
     >
       <div className="absolute inset-0 bg-dark" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(194,24,91,0.12)_0%,_transparent_60%)] pointer-events-none" />
@@ -39,12 +39,9 @@ export default function AscendShowcase() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp>
           <div className="text-center mb-10">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Now Casting · {ASCEND.tagline}
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
               THE INAUGURAL{" "}
-              <span className="text-gradient">PRODUCTION</span>
+              PRODUCTION
             </h2>
             <p className="mt-3 font-dm font-semibold text-cream/80 text-sm tracking-widest uppercase">
               Coming {ASCEND.performanceWindow} · Dates Coming Soon · Washington DC Area

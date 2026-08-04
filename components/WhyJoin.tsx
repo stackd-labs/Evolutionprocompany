@@ -28,7 +28,7 @@ function FadeUp({
 
 export default function WhyJoin() {
   return (
-    <section id="why-join" className="relative py-16 md:py-20 bg-dark overflow-hidden">
+    <section id="why-join" className="relative py-14 md:py-20 md:py-20 bg-dark overflow-hidden">
       {/* Gradient bg glows */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,_rgba(123,47,190,0.1)_0%,_transparent_55%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,_rgba(194,24,91,0.07)_0%,_transparent_55%)] pointer-events-none" />
@@ -39,11 +39,8 @@ export default function WhyJoin() {
           <div>
             <FadeUp>
               <div className="mb-12">
-                <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                  The Difference
-                </p>
                 <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
-                  WHY CHOOSE <span className="text-gradient">EPC</span>
+                  WHY CHOOSE EPC
                 </h2>
               </div>
             </FadeUp>
@@ -53,7 +50,7 @@ export default function WhyJoin() {
                 <FadeUp key={item.title} delay={i * 0.12}>
                   <div className="flex gap-5 items-start">
                     {/* Big visible number */}
-                    <div className="flex-shrink-0 font-bebas text-5xl md:text-7xl leading-none text-gradient select-none w-10 md:w-14 text-right">
+                    <div className="flex-shrink-0 font-bebas text-5xl md:text-7xl leading-none text-cream/20 select-none w-10 md:w-14 text-right">
                       0{i + 1}
                     </div>
                     <div className="flex-1 pt-1">

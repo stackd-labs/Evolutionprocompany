@@ -44,7 +44,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Rink Partners */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-purple flex-shrink-0" />
@@ -58,17 +58,13 @@ export default function PartnershipsPage() {
             serious and growing performer community.
           </p>
 
-          <div className="mb-8 rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="mb-8 rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
-              {RINK_PARTNER_BENEFITS.map((benefit, i) => (
+              {RINK_PARTNER_BENEFITS.map((benefit) => (
                 <div
                   key={benefit.title}
                   className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-4"
-                    style={{ background: `linear-gradient(90deg, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}00)` }}
-                  />
                   <h4 className="font-bebas text-lg text-cream tracking-widest mb-2">
                     {benefit.title}
                   </h4>
@@ -89,7 +85,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Corporate Partners */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-magenta flex-shrink-0" />
@@ -146,7 +142,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Additional partnership types */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-1.5 h-8 rounded-full bg-red flex-shrink-0" />
@@ -168,7 +164,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* CTA banner */}
-      <section className="py-16">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand" />

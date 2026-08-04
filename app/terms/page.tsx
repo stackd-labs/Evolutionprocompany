@@ -78,7 +78,7 @@ export default function TermsPage() {
             {sections.map((s, i) => (
               <div key={s.title} className="border-t border-white/8 pt-10 first:border-0 first:pt-0">
                 <div className="flex items-start gap-4 mb-4">
-                  <span className="font-bebas text-2xl text-gradient leading-none flex-shrink-0 select-none">
+                  <span className="font-bebas text-2xl text-cream/20 leading-none flex-shrink-0 select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="font-bebas text-2xl text-cream tracking-widest">{s.title}</h2>

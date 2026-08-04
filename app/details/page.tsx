@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "Exactly what EPC costs and exactly what performers earn — unified $200/mo membership, role-based pay from $50 to $400 per show, company credits, the touring schedule, and profit sharing.",
 };
 
-// Eyebrow + heading used to open each major section.
-function SectionHead({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
+// Heading used to open each major section. The gold italic eyebrow it used to
+// carry is now reserved for the page hero, so it doesn't repeat five times.
+function SectionHead({ children }: { children: React.ReactNode }) {
   return (
     <div className="mb-10">
-      <p className="font-cormorant italic text-gold text-lg tracking-widest mb-3">{eyebrow}</p>
       <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">{children}</h2>
     </div>
   );
@@ -50,7 +50,7 @@ export default function DetailsPage() {
       </section>
 
       {/* Transparency statement */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 font-dm text-cream/70 text-base leading-relaxed text-center">
             <p className="font-bebas text-2xl text-cream tracking-widest">
@@ -67,15 +67,15 @@ export default function DetailsPage() {
       </section>
 
       {/* Membership cost */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="What It Costs">
-            ONE MEMBERSHIP, <span className="text-gradient">EVERY DIVISION</span>
+          <SectionHead>
+            ONE MEMBERSHIP, EVERY DIVISION
           </SectionHead>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Standard */}
-            <div className="rounded-3xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="rounded-2xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
               <h3 className="font-bebas text-3xl text-cream tracking-widest mb-1">
                 {standard.name}
               </h3>
@@ -96,7 +96,7 @@ export default function DetailsPage() {
             </div>
 
             {/* Pro Dev Track */}
-            <div className="relative rounded-3xl bg-gradient-brand p-8 shadow-[0_8px_60px_rgba(123,47,190,0.35)]">
+            <div className="relative rounded-2xl bg-gradient-brand p-8 shadow-[0_8px_60px_rgba(123,47,190,0.35)]">
               <div className="absolute -top-3 left-8 px-3 py-1 bg-gold text-dark text-xs font-dm font-bold rounded-full tracking-widest uppercase">
                 Optional Upgrade
               </div>
@@ -132,9 +132,9 @@ export default function DetailsPage() {
       </section>
 
       {/* Which track — pointer to /company, which owns the track descriptions */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
               <h3 className="font-bebas text-2xl text-cream tracking-widest">
                 THE FEE COVERS ALL FOUR TRACKS
@@ -167,10 +167,10 @@ export default function DetailsPage() {
       </section>
 
       {/* Casting rules */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="What to Expect">
-            HOW ROLES ARE <span className="text-gradient">ASSIGNED</span>
+          <SectionHead>
+            HOW ROLES ARE ASSIGNED
           </SectionHead>
 
           <div className="font-dm text-cream/70 text-base leading-relaxed space-y-4 max-w-3xl">
@@ -194,10 +194,10 @@ export default function DetailsPage() {
       </section>
 
       {/* Performance schedule */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="The Touring Model">
-            PERFORMANCE <span className="text-gradient">SCHEDULE</span>
+          <SectionHead>
+            PERFORMANCE SCHEDULE
           </SectionHead>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="font-dm text-cream/70 text-sm leading-relaxed space-y-3">
@@ -216,7 +216,7 @@ export default function DetailsPage() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-2 gap-px bg-white/[0.06] rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="grid grid-cols-2 gap-px bg-white/[0.06] rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
               <div className="bg-[#0c0913] p-8 text-center">
                 <p className="font-dm text-xs text-cream/40 tracking-widest uppercase mb-2">Minimum</p>
                 <p className="font-bebas text-5xl text-cream tracking-widest">4</p>
@@ -236,10 +236,10 @@ export default function DetailsPage() {
       </section>
 
       {/* Compensation */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="How Performers Are Paid">
-            ROLE-BASED <span className="text-gradient">COMPENSATION</span>
+          <SectionHead>
+            ROLE-BASED COMPENSATION
           </SectionHead>
 
           <p className="font-dm text-cream/70 text-base leading-relaxed max-w-3xl mb-8">
@@ -265,7 +265,7 @@ export default function DetailsPage() {
           </div>
 
           {/* Role comp table */}
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
               {ROLE_COMPENSATION.map((r) => (
                 <div key={r.role} className="bg-[#0c0913] p-7 flex flex-col">
@@ -300,9 +300,9 @@ export default function DetailsPage() {
       </section>
 
       {/* Profit sharing */}
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl p-10 md:p-12">
+          <div className="relative overflow-hidden rounded-2xl p-10 md:p-12">
             <div className="absolute inset-0 bg-gradient-brand opacity-90" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.12)_0%,_transparent_70%)]" />
             <div className="relative z-10">
@@ -327,10 +327,10 @@ export default function DetailsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-bebas text-5xl text-cream tracking-widest mb-4">
-            BUILD SOMETHING <span className="text-gradient">FROM THE START</span>
+            BUILD SOMETHING FROM THE START
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8 max-w-xl mx-auto">
             Skater, dancer, movement artist, or emerging performer — EPC is the chance to

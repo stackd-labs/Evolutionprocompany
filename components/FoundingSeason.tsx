@@ -28,7 +28,7 @@ function FadeUp({
 
 export default function FoundingSeason() {
   return (
-    <section id="founding-season" className="relative py-16 md:py-20 overflow-hidden">
+    <section id="founding-season" className="relative py-14 md:py-20 md:py-20 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp>
           <div className="relative overflow-hidden rounded-2xl p-8 md:p-12 bg-gradient-brand">
@@ -48,7 +48,7 @@ export default function FoundingSeason() {
                 {FOUNDING_SEASON.benefits.map((benefit) => (
                   <div
                     key={benefit}
-                    className="flex items-center gap-3 rounded-xl bg-dark/20 backdrop-blur-sm px-4 py-3"
+                    className="flex items-center gap-3 rounded-2xl bg-dark/20 backdrop-blur-sm px-4 py-3"
                   >
                     <span className="text-gold text-lg flex-shrink-0">✦</span>
                     <span className="font-dm font-medium text-cream text-sm">

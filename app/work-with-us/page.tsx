@@ -40,15 +40,12 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Affiliates — Primary Push */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Our Biggest Ask
-              </p>
               <h2 className="font-bebas text-5xl text-cream tracking-widest leading-none mb-6">
-                BECOME AN <span className="text-gradient">AFFILIATE</span>
+                BECOME AN AFFILIATE
               </h2>
               <div className="space-y-4 font-dm text-cream/70 text-sm leading-relaxed">
                 <p>
@@ -93,12 +90,11 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* Other Ways to Connect */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-3">Other Ways In</p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              ROLES WE ARE <span className="text-gradient">HIRING FOR</span>
+              ROLES WE ARE HIRING FOR
             </h2>
             <p className="mt-4 font-dm text-cream/50 text-sm max-w-xl mx-auto">
               These are roles for people. If you represent a rink, venue, brand, or
@@ -110,7 +106,7 @@ export default function WorkWithUsPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
               {[
                 {
@@ -135,10 +131,6 @@ export default function WorkWithUsPage() {
                 },
               ].map((item) => (
                 <div key={item.title} className="bg-[#0c0913] p-8">
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-5"
-                    style={{ background: item.color }}
-                  />
                   <h3 className="font-bebas text-2xl text-cream tracking-widest mb-3">{item.title}</h3>
                   <p className="font-dm text-cream/60 text-sm leading-relaxed">{item.body}</p>
                 </div>
@@ -149,7 +141,7 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand" />

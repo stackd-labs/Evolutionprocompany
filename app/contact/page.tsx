@@ -60,7 +60,7 @@ export default function ContactPage() {
           <p className="font-dm text-cream/40 text-xs tracking-widest uppercase text-center mb-6">
             Looking for something specific?
           </p>
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-3 gap-px bg-white/[0.06]">
               {quickLinks.map((link) => (
                 <Link
@@ -89,7 +89,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact form */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-5 gap-12 items-start">
 
@@ -97,7 +97,7 @@ export default function ContactPage() {
             <div className="md:col-span-2 space-y-8">
               <div>
                 <h2 className="font-bebas text-3xl text-cream tracking-widest mb-4">
-                  GET IN <span className="text-gradient">TOUCH</span>
+                  GET IN TOUCH
                 </h2>
                 <p className="font-dm text-cream/60 text-sm leading-relaxed">
                   We are a lean, focused team. We don&apos;t have a call center

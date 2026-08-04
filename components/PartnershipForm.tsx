@@ -169,10 +169,9 @@ export default function PartnershipForm() {
   }, []);
 
   return (
-    <section id="inquire" className="py-16 border-t border-white/10 text-center">
-      <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">Start the Conversation</p>
+    <section id="inquire" className="py-14 md:py-20 border-t border-white/10 text-center">
       <h2 className="font-bebas text-4xl text-cream tracking-widest mb-4">
-        READY TO <span className="text-gradient">PARTNER?</span>
+        READY TO PARTNER?
       </h2>
       <p className="font-dm text-cream/55 text-sm max-w-md mx-auto mb-8">
         Tell us about your organization and what you have in mind. Every inquiry is reviewed directly by the EPC team.

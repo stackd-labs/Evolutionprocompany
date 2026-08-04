@@ -89,12 +89,12 @@ export default function CompanyPage() {
       </section>
 
       {/* Company tracks */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-14 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(123,47,190,0.08)_0%,_transparent_55%)] pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              OUR COMPANY <span className="text-gradient">STRUCTURE</span>
+              OUR COMPANY STRUCTURE
             </h2>
             <p className="mt-3 font-dm text-cream/50 text-sm max-w-xl mx-auto">
               Four tracks, one standard. Placement is by age — plus a Flex Track for anyone
@@ -107,7 +107,7 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
               {AUDITION_TIERS.map((tier) => (
                 <div
@@ -143,9 +143,6 @@ export default function CompanyPage() {
           </p>
 
           <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-[#0c0913] p-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-2">
-              And EPC pays its performers
-            </p>
             <p className="font-bebas text-4xl md:text-5xl text-cream tracking-widest leading-none mb-3">
               {PERFORMER_PAY_SUMMARY.perShow}{" "}
               <span className="text-xl text-cream/50">per show</span>
@@ -165,12 +162,12 @@ export default function CompanyPage() {
       </section>
 
       {/* Training schedule */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="font-bebas text-4xl text-cream tracking-widest mb-3">
-                TRAINING <span className="text-gradient">SCHEDULE</span>
+                TRAINING SCHEDULE
               </h2>
               <p className="font-dm text-cream/60 text-sm mb-8 leading-relaxed">
                 All members train on a weekly schedule throughout each production cycle.
@@ -213,7 +210,7 @@ export default function CompanyPage() {
             {/* Curriculum */}
             <div>
               <h2 className="font-bebas text-4xl text-cream tracking-widest mb-8">
-                CURRICULUM <span className="text-gradient">BREAKDOWN</span>
+                CURRICULUM BREAKDOWN
               </h2>
               <div className="space-y-5">
                 {curriculum.map((item) => (
@@ -231,16 +228,13 @@ export default function CompanyPage() {
       <Membership />
 
       {/* Company Experiences & Member Perks */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(123,47,190,0.1)_0%,_transparent_65%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,_rgba(194,24,91,0.07)_0%,_transparent_60%)] pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              The Experience
-            </p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              COMPANY EXPERIENCES <span className="text-gradient">&amp; MEMBER PERKS</span>
+              COMPANY EXPERIENCES &amp; MEMBER PERKS
             </h2>
           </div>
 
@@ -248,7 +242,7 @@ export default function CompanyPage() {
             Membership is about more than rehearsals. EPC builds a full company experience — from production nights and creative retreats to career development and team outings. Open any category to see what it includes.
           </p>
 
-          <div className="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="divide-y divide-white/[0.06]">
               {MEMBER_EXPERIENCES.map((cat) => (
                 <details key={cat.title} className="group bg-[#0c0913]">
@@ -285,10 +279,10 @@ export default function CompanyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
+      <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-bebas text-5xl text-cream tracking-widest mb-4">
-            READY TO <span className="text-gradient">EVOLVE?</span>
+            READY TO EVOLVE?
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8">
             We are casting now for the founding company. Register your interest

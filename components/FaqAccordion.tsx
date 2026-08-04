@@ -16,7 +16,7 @@ export default function FaqAccordion({ items }: { items: FAQItem[] }) {
       {items.map((item, i) => (
         <div
           key={i}
-          className={`rounded-xl border transition-all duration-200 overflow-hidden ${
+          className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
             openIndex === i
               ? "border-gold/40 bg-white/8"
               : "border-white/10 bg-white/5 hover:border-white/20"
