@@ -156,6 +156,14 @@ export default function PartnershipsPage() {
           <p className="font-dm text-cream/65 text-base leading-relaxed max-w-2xl ml-6">
             We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
           </p>
+          <p className="mt-6 ml-6 font-dm text-cream/45 text-sm leading-relaxed max-w-2xl">
+            This page is for organizations. If you&apos;re an <span className="text-cream/70">individual</span> —
+            an instructor, choreographer, affiliate, freelancer, or volunteer —{" "}
+            <Link href="/work-with-us" className="text-gold hover:underline underline-offset-4">
+              Work With Us
+            </Link>{" "}
+            is the right place.
+          </p>
         </div>
       </section>
 
@@ -167,13 +175,13 @@ export default function PartnershipsPage() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1)_0%,_transparent_70%)]" />
             <div className="relative z-10">
               <p className="font-cormorant italic text-cream/80 text-xl mb-3">
-                Don&apos;t see exactly what you need?
+                Don&apos;t see a tier that fits?
               </p>
               <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-4">
-                TELL US WHAT YOU HAVE IN MIND
+                WE BUILD THE DEAL AROUND YOU
               </h3>
               <p className="font-dm text-cream/70 text-base max-w-lg mx-auto">
-                Every partnership we build is custom. Click below to tell us about your organization and vision — we&apos;ll take it from there.
+                Every EPC partnership is structured around your facility, calendar, and goals. Tell us about your organization below and we&apos;ll come back with a proposal.
               </p>
             </div>
           </div>

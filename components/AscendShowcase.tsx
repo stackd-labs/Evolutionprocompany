@@ -40,12 +40,15 @@ export default function AscendShowcase() {
         <FadeUp>
           <div className="text-center mb-10">
             <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Now Presenting · {ASCEND.tagline}
+              Now Casting · {ASCEND.tagline}
             </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
               THE INAUGURAL{" "}
               <span className="text-gradient">PRODUCTION</span>
             </h2>
+            <p className="mt-3 font-dm font-semibold text-cream/80 text-sm tracking-widest uppercase">
+              Coming {ASCEND.performanceWindow} · Dates Coming Soon · Washington DC Area
+            </p>
             <p className="mt-4 font-dm text-cream/65 text-base max-w-2xl mx-auto">
               {ASCEND.summary}
             </p>
@@ -59,8 +62,8 @@ export default function AscendShowcase() {
           >
             <Image
               src="/ascend-flyer.png"
-              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. September 2026."
-              width={1536}
+              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. Coming 2027, dates coming soon."
+              width={1535}
               height={1024}
               className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
               sizes="(max-width: 1152px) 100vw, 1152px"

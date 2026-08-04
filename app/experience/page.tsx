@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import WhatMakesDifferent from "@/components/WhatMakesDifferent";
-import Partners from "@/components/Partners";
 
 export const metadata: Metadata = {
   title: "The EPC Experience | Evolution Production Company",
@@ -69,9 +67,6 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* What makes EPC different (relocated from homepage) */}
-      <WhatMakesDifferent />
-
       {/* Intro — the model, with imagery */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,16 +93,11 @@ export default function ExperiencePage() {
                 ONE CONTINUOUS,{" "}
                 <span className="text-gradient">IMMERSIVE EVENING</span>
               </h2>
-              <p className="font-dm text-cream/70 text-base leading-relaxed mb-4">
+              <p className="font-dm text-cream/70 text-base leading-relaxed">
                 A traditional ice show is a sequence of acts. A recital is a list
                 of routines. EPC is neither. We build one continuous experience
                 where skating, dance, and movement share the same space and the
                 same story — performed close enough for the audience to feel it.
-              </p>
-              <p className="font-dm text-cream/60 text-base leading-relaxed">
-                The result is an evening that flows without interruption,
-                surrounds the audience, and feels unlike anything else in live
-                performance.
               </p>
             </div>
           </div>
@@ -202,8 +192,23 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Partnership opportunities (relocated from homepage) */}
-      <Partners />
+      {/* Partnerships are owned by /partnerships — pointer only, no repeated pitch. */}
+      <section className="pb-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+            <p className="font-dm text-cream/60 text-sm leading-relaxed">
+              Rinks, venues, brands, and community organizations can bring this experience
+              to their audience.{" "}
+              <Link
+                href="/partnerships"
+                className="text-gold hover:underline underline-offset-4"
+              >
+                See partnership options →
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-20">

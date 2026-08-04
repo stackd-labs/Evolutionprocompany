@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import { AUDITION_TIERS } from "@/lib/constants";
 
 function FadeUp({
@@ -42,8 +43,8 @@ export default function Auditions() {
               <span className="text-gradient">STRUCTURE</span>
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
-              Every EPC member earns their place through audition. Every member
-              performs. Talent is welcome at every age.
+              Four tracks, one standard. Every member earns their place through audition,
+              and every member performs.
             </p>
           </div>
         </FadeUp>
@@ -67,16 +68,25 @@ export default function Auditions() {
                 >
                   {tier.ages}
                 </div>
-                <h3 className="font-bebas text-3xl text-cream tracking-widest mb-2">
+                <h3 className="font-bebas text-3xl text-cream tracking-widest">
                   {tier.name}
                 </h3>
-                <p className="font-dm text-cream/60 text-sm leading-relaxed">
-                  {tier.description}
-                </p>
               </div>
             </FadeUp>
           ))}
         </div>
+
+        {/* Track detail lives on /company — this is a teaser only. */}
+        <FadeUp delay={0.5}>
+          <p className="mt-10 text-center font-dm text-cream/50 text-sm">
+            <Link
+              href="/company"
+              className="text-gold hover:underline underline-offset-4"
+            >
+              See what each track involves →
+            </Link>
+          </p>
+        </FadeUp>
       </div>
     </section>
   );

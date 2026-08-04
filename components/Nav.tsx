@@ -6,10 +6,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+// "Home" is intentionally absent — the logo links to /, which frees a slot for Fees & Pay.
 const links = [
-  { label: "Home", href: "/" },
   { label: "Ascend", href: "/shows" },
   { label: "Join EPC", href: "/company" },
+  { label: "Fees & Pay", href: "/details" },
   { label: "EPC Experience", href: "/experience" },
   { label: "Corporate Events", href: "/events" },
   { label: "About", href: "/about" },

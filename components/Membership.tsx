@@ -119,17 +119,20 @@ export default function Membership() {
                   page.
                 </p>
 
-                <ul className="space-y-3 mb-6 flex-1">
-                  {tier.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className={`flex items-start gap-2 text-sm font-dm ${tier.featured ? "text-cream/90" : "text-cream/70"}`}
-                    >
-                      <span className="text-gold">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Summary, not a reprint — /details itemizes every feature. */}
+                <div className="mb-6 flex-1">
+                  <p
+                    className={`font-bebas text-2xl tracking-widest ${tier.featured ? "text-gold" : "text-gradient"}`}
+                  >
+                    {tier.features.length} inclusions
+                  </p>
+                  <p
+                    className={`mt-1 font-dm text-sm leading-relaxed ${tier.featured ? "text-cream/85" : "text-cream/60"}`}
+                  >
+                    {tier.features.slice(0, 3).join(", ")}, and{" "}
+                    {tier.features.length - 3} more.
+                  </p>
+                </div>
 
                 {"castingNote" in tier && tier.castingNote && (
                   <p className="font-dm text-xs text-cream/50 italic mb-6 leading-relaxed border-t border-white/15 pt-4">
@@ -153,16 +156,7 @@ export default function Membership() {
         </div>
 
         <FadeUp delay={0.3}>
-          <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-purple/20 via-magenta/20 to-red/20 text-center">
-            <p className="font-dm text-cream text-sm leading-relaxed">
-              <span className="font-semibold text-gold">Standard membership is $200/month for every division.</span>{" "}
-              The optional Professional Development Track adds $150 per production cycle.{" "}
-              <Link href="/details" className="text-gold underline underline-offset-2 hover:text-gold/80">
-                See full fees &amp; compensation →
-              </Link>
-            </p>
-          </div>
-          <p className="mt-4 text-center font-dm text-cream/40 text-xs tracking-wide">
+          <p className="mt-10 text-center font-dm text-cream/40 text-xs tracking-wide">
             All casting decisions are strictly audition-based. Membership tier does not
             affect role assignment. Principal and corporate spots are earned on the floor.
           </p>

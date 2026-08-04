@@ -12,12 +12,13 @@ import {
   AUDITION_TIERS,
   SEEKING,
   FAQ,
+  AUDITION_FAQ_QUESTIONS,
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Ascend — The Inaugural EPC Production | Evolution Production Company",
   description:
-    "Ascend is the inaugural production from Evolution Production Company — a continuous live performance experience blending skating, dance, and movement. Premiering September 2026 in the DMV. Auditions for the founding company are coming to the Washington DC area.",
+    "Ascend is the inaugural production from Evolution Production Company — a continuous live performance experience blending skating, dance, and movement. Coming in 2027 to the DMV, with dates announced soon. We are casting the founding company now in the Washington DC area.",
 };
 
 export default function ShowsPage() {
@@ -31,13 +32,13 @@ export default function ShowsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_30%,_rgba(123,47,190,0.12)_0%,_transparent_60%)]" />
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="sr-only">
-            Ascend — The Inaugural EPC Production, September 2026
+            Ascend — The Inaugural EPC Production, Coming 2027
           </h1>
           <div className="relative rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(123,47,190,0.25)]">
             <Image
               src="/ascend-flyer.png"
-              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. September 2026."
-              width={1536}
+              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. Coming 2027, dates coming soon."
+              width={1535}
               height={1024}
               priority
               className="w-full h-auto"
@@ -61,14 +62,19 @@ export default function ShowsPage() {
         </div>
       </section>
 
-      {/* Production overview */}
-      <section className="py-20">
+      {/* ============================================================= */}
+      {/* MOVEMENT 1 — the production.                                   */}
+      {/* Ornament budget for this page: 2 eyebrows (one per movement),   */}
+      {/* 1 gradient headline (on AUDITION FOR EPC — the conversion      */}
+      {/* moment, so the eye is pulled down the page toward it).         */}
+      {/* ============================================================= */}
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="relative h-72 md:h-[460px] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=1000&q=80"
-                alt="Ascend — the inaugural EPC production"
+                src="/skater.jpg"
+                alt="An EPC performer on the ice"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -85,11 +91,10 @@ export default function ShowsPage() {
             </div>
             <div>
               <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Production Overview
+                The Inaugural EPC Production
               </p>
               <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
-                ONE CONTINUOUS{" "}
-                <span className="text-gradient">EXPERIENCE</span>
+                ONE CONTINUOUS EXPERIENCE
               </h2>
               <p className="font-dm text-cream/70 text-base leading-relaxed">
                 {ASCEND.overview}
@@ -100,15 +105,14 @@ export default function ShowsPage() {
       </section>
 
       {/* Production details */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              EVERYTHING YOU{" "}
-              <span className="text-gradient">NEED TO KNOW</span>
+              EVERYTHING YOU NEED TO KNOW
             </h2>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
               {ASCEND.details.map((detail) => (
                 <div
@@ -139,55 +143,42 @@ export default function ShowsPage() {
 
       <FoundingSeason />
 
-      {/* Future productions */}
-      <section className="py-20">
+      {/* Future productions — two items, so plain rows rather than a
+          bordered card grid. Repetition of one layout device isn't rhythm. */}
+      <section className="py-10 md:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Beyond the Founding Season
-            </p>
-            <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              FUTURE <span className="text-gradient">PRODUCTIONS</span>
-            </h2>
-          </div>
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
-            <div className="grid sm:grid-cols-2 gap-px bg-white/[0.06]">
-              {FUTURE_PRODUCTIONS.map((show) => (
-                <div
-                  key={show.theme}
-                  className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
-                >
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-4"
-                    style={{
-                      background: `linear-gradient(90deg, ${show.color}, ${show.color}00)`,
-                    }}
-                  />
-                  <div className="flex items-baseline justify-between gap-3 mb-3">
-                    <h3 className="font-bebas text-3xl text-cream tracking-widest">
-                      {show.theme}
-                    </h3>
-                    <span className="font-dm text-cream/50 text-xs tracking-widest uppercase">
-                      {show.window}
-                    </span>
-                  </div>
-                  <p className="font-dm text-cream/60 text-sm leading-relaxed">
-                    {show.description}
-                  </p>
+          <h2 className="font-bebas text-2xl text-cream/50 tracking-[0.2em] mb-8">
+            BEYOND THE FOUNDING SEASON
+          </h2>
+          <div className="divide-y divide-white/[0.06]">
+            {FUTURE_PRODUCTIONS.map((show) => (
+              <div
+                key={show.theme}
+                className="grid sm:grid-cols-[10rem_1fr] gap-2 sm:gap-8 py-6"
+              >
+                <div>
+                  <h3 className="font-bebas text-3xl text-cream tracking-widest leading-none">
+                    {show.theme}
+                  </h3>
+                  <span className="font-dm text-cream/40 text-xs tracking-widest uppercase">
+                    {show.window}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <p className="font-dm text-cream/60 text-sm leading-relaxed self-center">
+                  {show.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ============================================================= */}
       {/* AUDITIONS — merged from the former /auditions page.            */}
-      {/* Placeholder copy carried over; replace with final info.        */}
       {/* ============================================================= */}
 
-      {/* Section intro */}
-      <section className="relative py-16 overflow-hidden">
+      {/* MOVEMENT 2 — the audition. Second and last eyebrow, only gradient. */}
+      <section className="relative py-14 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(232,51,74,0.1)_0%,_transparent_55%)] pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
@@ -212,74 +203,29 @@ export default function ShowsPage() {
         </div>
       </section>
 
-      {/* Who EPC Is For */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Is EPC Right for You?
-              </p>
-              <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
-                WHO EPC <span className="text-gradient">IS FOR</span>
-              </h3>
-              <p className="font-dm text-cream/65 text-base leading-relaxed">
-                EPC is for performers who are excited about creativity,
-                collaboration, and live performance. Our company is a great fit for
-                skaters, dancers, and artists who want to be part of original
-                productions while continuing to grow in their primary training
-                environments. We welcome performers who are passionate,
-                team-oriented, open to learning, and excited to contribute to a
-                positive company culture.
-              </p>
-            </div>
-            <div className="space-y-3 font-dm text-cream/65 text-base leading-relaxed">
-              {[
-                "Skaters and dancers at any experience level",
-                "Performers who want more stage time and original productions",
-                "Artists who value community, collaboration, and growth",
-                "Anyone ready to commit to something new",
-              ].map((item) => (
-                <p key={item} className="flex items-start gap-2">
-                  <span className="text-gold flex-shrink-0 mt-0.5">→</span>
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* We Are Seeking */}
-      <section className="py-16">
+      {/* Who should audition — "Who EPC Is For" merged in; both made the same argument. */}
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Who Should Audition
-            </p>
             <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              WE ARE <span className="text-gradient">SEEKING</span>
+              WE ARE SEEKING
             </h3>
-            <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
-              If you move, you belong here. EPC blends skating, dance, and movement
-              into one continuous experience — and we&apos;re building the founding
-              cast now.
+            <p className="mt-4 font-dm text-cream/60 text-base max-w-2xl mx-auto">
+              If you move, you belong here — skaters and dancers at any experience level who
+              want more stage time in original productions, and who are coachable,
+              team-oriented, and ready to commit. We&apos;re building the founding cast now.
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          {/* Hairline removed — these 4 colors encode nothing, unlike the
+              track colors below, which carry identity across three pages. */}
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
               {SEEKING.map((role) => (
                 <div
                   key={role.title}
                   className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-4"
-                    style={{
-                      background: `linear-gradient(90deg, ${role.color}, ${role.color}00)`,
-                    }}
-                  />
                   <h4 className="font-bebas text-2xl text-cream tracking-widest mb-2">
                     {role.title}
                   </h4>
@@ -294,15 +240,23 @@ export default function ShowsPage() {
       </section>
 
       {/* Eligibility & Requirements */}
-      <section className="py-16">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              ELIGIBILITY & <span className="text-gradient">REQUIREMENTS</span>
+              ELIGIBILITY &amp; REQUIREMENTS
             </h3>
+            <p className="mt-4 font-dm text-cream/55 text-sm max-w-xl mx-auto">
+              What each track needs at the audition. For what each track involves once
+              you&apos;re in, see{" "}
+              <Link href="/company" className="text-gold hover:underline underline-offset-4">
+                the company structure
+              </Link>
+              .
+            </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
               {AUDITION_TIERS.map((tier) => (
                 <div
@@ -319,12 +273,9 @@ export default function ShowsPage() {
                   >
                     {tier.ages}
                   </div>
-                  <h4 className="font-bebas text-3xl text-cream tracking-widest mb-3">
+                  <h4 className="font-bebas text-3xl text-cream tracking-widest mb-4">
                     {tier.name}
                   </h4>
-                  <p className="font-dm text-cream/65 text-sm leading-relaxed mb-5">
-                    {tier.description}
-                  </p>
                   <ul className="space-y-2">
                     {tier.requirements.map((req) => (
                       <li
@@ -344,10 +295,10 @@ export default function ShowsPage() {
       </section>
 
       {/* What to expect */}
-      <section className="py-16">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="font-bebas text-4xl text-cream tracking-widest mb-10">
-            WHAT TO <span className="text-gradient">EXPECT</span>
+            WHAT TO EXPECT
           </h3>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-6">
@@ -383,15 +334,23 @@ export default function ShowsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16">
+      {/* Audition-relevant questions only — /faq owns the full set. */}
+      <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              FREQUENTLY ASKED <span className="text-gradient">QUESTIONS</span>
+              AUDITION QUESTIONS
             </h3>
           </div>
-          <FaqAccordion items={FAQ} />
+          <FaqAccordion
+            items={FAQ.filter((f) => AUDITION_FAQ_QUESTIONS.includes(f.question))}
+          />
+          <p className="mt-8 text-center font-dm text-cream/50 text-sm">
+            Questions about membership, housing, travel, or touring?{" "}
+            <Link href="/faq" className="text-gold hover:underline underline-offset-4">
+              See all {FAQ.length} answers →
+            </Link>
+          </p>
         </div>
       </section>
 

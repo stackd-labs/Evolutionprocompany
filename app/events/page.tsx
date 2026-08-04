@@ -144,39 +144,26 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Venue & Production Partnerships */}
-      <section className="overflow-hidden">
-        <div className="grid md:grid-cols-2 min-h-[420px]">
-          <div className="bg-[#11091A] px-8 md:px-16 py-16 flex flex-col justify-center">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Collaboration
-            </p>
-            <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
-              VENUE &amp; PRODUCTION{" "}
-              <span className="text-gradient">PARTNERSHIPS</span>
-            </h2>
-            <p className="font-dm text-cream/65 text-base leading-relaxed mb-8">
-              EPC collaborates with ice rinks, theaters, arenas, sports organizations,
-              arts groups, and corporate venues to bring original productions to new
-              audiences — while creating real performance opportunities for our company members.
-            </p>
+      {/* Ongoing partnerships are owned by /partnerships — pointer only. */}
+      <section className="pb-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:flex md:items-center md:justify-between md:gap-8">
+            <div>
+              <h2 className="font-bebas text-2xl text-cream tracking-widest mb-2">
+                LOOKING FOR AN ONGOING PARTNERSHIP?
+              </h2>
+              <p className="font-dm text-cream/60 text-sm leading-relaxed max-w-xl">
+                Booking a performance is a one-time engagement. Rinks, venues, and sponsors
+                looking for a recurring relationship — rehearsal blocks, co-hosted
+                productions, season sponsorship — should start here instead.
+              </p>
+            </div>
             <Link
               href="/partnerships"
-              className="self-start px-7 py-3 border border-purple/50 text-purple font-dm font-semibold text-sm rounded-lg hover:bg-purple/10 hover:border-purple/70 transition-all duration-200"
+              className="mt-6 md:mt-0 inline-block flex-shrink-0 px-7 py-3 border border-purple/50 text-purple font-dm font-semibold text-sm rounded-lg hover:bg-purple/10 hover:border-purple/70 transition-all duration-200"
             >
               View Partnership Options →
             </Link>
-          </div>
-
-          <div className="bg-dark border-l border-white/10 px-8 md:px-16 py-16 flex flex-col justify-center">
-            <p className="font-cormorant italic text-gold text-xl mb-6">
-              &ldquo;The earliest partners don&apos;t just sponsor a company. They become part of its story.&rdquo;
-            </p>
-            <p className="font-dm text-cream/55 text-base leading-relaxed">
-              Whether you&apos;re an event organizer, venue operator, or community org — if
-              you believe in live performance, there&apos;s a place for you in EPC&apos;s story.
-              Reach out and let&apos;s build something together.
-            </p>
           </div>
         </div>
       </section>

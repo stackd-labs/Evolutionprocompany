@@ -2,174 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import {
+  MEMBERSHIP_TIERS,
+  ROLE_COMPENSATION,
+  AUDITION_TIERS,
+} from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Membership, Casting & Compensation | Evolution Production Company",
+  title: "Fees & Performer Pay | Evolution Production Company",
   description:
-    "How EPC membership, casting, and compensation work — unified $200/mo membership, role-based pay for performers, company credits, profit sharing, and the touring production model. Full transparency, in one place.",
+    "Exactly what EPC costs and exactly what performers earn — unified $200/mo membership, role-based pay from $50 to $400 per show, company credits, the touring schedule, and profit sharing.",
 };
-
-const MEMBERSHIP_INCLUDES = [
-  "Rehearsals",
-  "Production Participation",
-  "Performance Opportunities",
-  "Artistic Development",
-  "Casting Opportunities",
-  "Community Events",
-  "Company Gatherings",
-  "Production Preparation",
-  "Company Communications & Resources",
-];
-
-const PRO_DEV_BENEFITS = [
-  "Professional Development Workshops",
-  "Industry Sessions",
-  "Corporate Performance Opportunities",
-  "Portfolio Development",
-  "Professional Media Opportunities",
-  "Leadership Opportunities",
-  "Mentorship Opportunities",
-  "Priority Access to Select Workshops & Events",
-];
-
-const DIVISIONS = [
-  {
-    name: "Youth Company",
-    ages: "11 & Under",
-    color: "#7B2FBE",
-    description:
-      "The Youth Company is designed for young performers interested in developing performance skills while participating in EPC productions. Members may include skaters, dancers, movement artists, and emerging performers who demonstrate enthusiasm, commitment, and a willingness to learn.",
-    receivesLabel: "Youth Company members receive:",
-    receives: [
-      "Participation in EPC productions",
-      "Rehearsal opportunities",
-      "Artistic development",
-      "Performance experience",
-      "Company events and activities",
-      "Eligibility for Ensemble, Featured, and Principal opportunities when appropriate",
-    ],
-    comp: "Youth performers under age 16 receive company credits based on the role earned within a production.",
-  },
-  {
-    name: "Junior Company",
-    ages: "12–15",
-    color: "#C2185B",
-    description:
-      "The Junior Company is designed for developing performers seeking greater artistic responsibility and performance opportunities. Members take part in rehearsals, productions, and company activities while continuing to develop technical and performance skills.",
-    receivesLabel: "Junior Company members receive:",
-    receives: [
-      "Participation in EPC productions",
-      "Rehearsal opportunities",
-      "Artistic development",
-      "Performance experience",
-      "Company events and activities",
-      "Eligibility for Ensemble, Featured, and Principal opportunities",
-    ],
-    comp: "Junior performers receive company credits based on the role earned within a production.",
-  },
-  {
-    name: "Company Artists",
-    ages: "16+",
-    color: "#E8334A",
-    description:
-      "Company Artists participate fully in EPC productions, rehearsals, and company opportunities — skaters, dancers, movement artists, specialty performers, and multidisciplinary artists. They help shape the culture, artistic direction, and future growth of EPC.",
-    receivesLabel: "Company Artists receive:",
-    receives: [
-      "Participation in EPC productions",
-      "Rehearsal opportunities",
-      "Artistic development",
-      "Professional performance opportunities",
-      "Company events and activities",
-      "Eligibility for Ensemble, Featured, and Principal opportunities",
-      "Eligibility for cash compensation based on role placement",
-      "Eligibility for future incentive and profit-sharing programs",
-    ],
-    comp: "",
-  },
-  {
-    name: "Flex Track",
-    ages: "Flexible",
-    color: "#F5C842",
-    description:
-      "The Flex Track is designed for individuals who wish to remain connected to EPC without committing to full production participation. Flex Track participants are not required to perform, and may have different participation requirements depending on the opportunity.",
-    receivesLabel: "Flex participants may take part in:",
-    receives: [
-      "Training opportunities",
-      "Workshops",
-      "Community events",
-      "Networking opportunities",
-      "Professional development opportunities",
-      "Select company activities",
-    ],
-    comp: "",
-  },
-];
-
-const ROLE_COMP = [
-  {
-    role: "Ensemble Artists",
-    perShow: "$50–$100",
-    perProduction: "$300–$600",
-    color: "#7B2FBE",
-    responsibilities: [
-      "Ensemble choreography",
-      "Group performance work",
-      "Scene transitions",
-      "Production support",
-      "Company ensemble participation",
-    ],
-  },
-  {
-    role: "Featured Artists",
-    perShow: "$100–$200",
-    perProduction: "$600–$1,200",
-    color: "#C2185B",
-    responsibilities: [
-      "Featured performance moments",
-      "Specialty acts",
-      "Supporting storytelling roles",
-      "Significant artistic contributions",
-    ],
-  },
-  {
-    role: "Principal Artists",
-    perShow: "$200–$400",
-    perProduction: "$1,200–$2,400",
-    color: "#E8334A",
-    responsibilities: [
-      "Lead artistic roles",
-      "Featured storytelling moments",
-      "Major production responsibilities",
-    ],
-  },
-];
-
-const COMP_FAQ = [
-  {
-    q: "Can anyone audition?",
-    a: "Yes. Anyone meeting the age and eligibility requirements may audition for company placement.",
-  },
-  {
-    q: "Do I need to live in Virginia?",
-    a: "No. EPC welcomes performers from throughout the DMV region and beyond.",
-  },
-  {
-    q: "Does EPC provide housing?",
-    a: "Not currently. Performers are responsible for their own housing arrangements.",
-  },
-  {
-    q: "Does EPC provide travel assistance?",
-    a: "Not during the Founding Season. Future travel support programs may be introduced as the company grows.",
-  },
-  {
-    q: "Does EPC sponsor visas?",
-    a: "Not currently. Performers must be legally authorized to work and perform in the United States.",
-  },
-  {
-    q: "Can I join without performing?",
-    a: "Yes. Individuals interested in training, networking, company support, or professional development may participate through the Flex Track.",
-  },
-];
 
 // Eyebrow + heading used to open each major section.
 function SectionHead({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
@@ -182,6 +25,8 @@ function SectionHead({ eyebrow, children }: { eyebrow: string; children: React.R
 }
 
 export default function DetailsPage() {
+  const [standard, proDev] = MEMBERSHIP_TIERS;
+
   return (
     <main className="bg-dark min-h-screen">
       <Nav />
@@ -195,12 +40,11 @@ export default function DetailsPage() {
             Our Commitment to Transparency
           </p>
           <h1 className="font-bebas text-5xl md:text-7xl text-cream tracking-widest leading-none mb-6">
-            MEMBERSHIP, CASTING &amp; <span className="text-gradient">COMPENSATION</span>
+            FEES &amp; <span className="text-gradient">PERFORMER PAY</span>
           </h1>
           <p className="font-dm text-cream/65 text-base md:text-lg max-w-2xl mx-auto">
-            Performers deserve clear opportunities, fair compensation, and the
-            ability to share in the success of the productions they help create.
-            Here&apos;s exactly how it works.
+            What membership costs, and what performers earn. Every number EPC can
+            commit to is on this page.
           </p>
         </div>
       </section>
@@ -213,43 +57,36 @@ export default function DetailsPage() {
               Every company member performs.
             </p>
             <p>
-              Not every member earns the same role — but every performer
-              contributes to the production and shares in the experience of
-              bringing it to life. Our goal is an environment where performers
-              understand the opportunities available to them, how productions
-              operate, and how compensation is structured.
-            </p>
-            <p className="text-cream/55">
-              As EPC grows, we intend to create additional opportunities for
-              performers to benefit from the success of the company they help build.
+              Not every member earns the same role, but every performer contributes to
+              the production and shares in the experience of bringing it to life. As EPC
+              grows, we intend to create additional ways for performers to benefit from
+              the success of the company they help build.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Membership */}
+      {/* Membership cost */}
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="Company Membership">
+          <SectionHead eyebrow="What It Costs">
             ONE MEMBERSHIP, <span className="text-gradient">EVERY DIVISION</span>
           </SectionHead>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Standard */}
             <div className="rounded-3xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
-              <div className="flex items-baseline justify-between gap-3 mb-1">
-                <h3 className="font-bebas text-3xl text-cream tracking-widest">Standard Company Membership</h3>
-              </div>
+              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-1">
+                {standard.name}
+              </h3>
               <p className="font-bebas text-5xl text-gold tracking-widest mb-3">
                 $200 <span className="text-xl text-cream/50">/ month</span>
               </p>
               <p className="font-dm text-cream/60 text-sm leading-relaxed mb-6">
-                EPC operates on a unified membership model — all accepted members pay
-                the same monthly fee regardless of age or division. Every accepted
-                member is included in company productions.
+                {standard.description}
               </p>
               <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2">
-                {MEMBERSHIP_INCLUDES.map((item) => (
+                {standard.features.map((item) => (
                   <li key={item} className="flex items-start gap-2 font-dm text-cream/75 text-sm">
                     <span className="text-gold mt-0.5">✓</span>
                     {item}
@@ -263,64 +100,65 @@ export default function DetailsPage() {
               <div className="absolute -top-3 left-8 px-3 py-1 bg-gold text-dark text-xs font-dm font-bold rounded-full tracking-widest uppercase">
                 Optional Upgrade
               </div>
-              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-1">Professional Development Track</h3>
+              <h3 className="font-bebas text-3xl text-cream tracking-widest mb-1">
+                {proDev.name}
+              </h3>
               <p className="font-bebas text-5xl text-cream tracking-widest mb-3">
                 $150 <span className="text-xl text-cream/70">/ production cycle</span>
               </p>
               <p className="font-dm text-cream/85 text-sm leading-relaxed mb-6">
-                For performers who want to expand their opportunities beyond standard
-                membership. Participation does <span className="font-semibold">not</span> affect
-                casting — all members remain eligible for Ensemble, Featured, and
-                Principal roles.
+                {proDev.description}
               </p>
               <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2">
-                {PRO_DEV_BENEFITS.map((item) => (
+                {proDev.features.map((item) => (
                   <li key={item} className="flex items-start gap-2 font-dm text-cream/90 text-sm">
                     <span className="text-gold mt-0.5">✦</span>
                     {item}
                   </li>
                 ))}
               </ul>
+              {"castingNote" in proDev && proDev.castingNote && (
+                <p className="mt-6 pt-4 border-t border-white/20 font-dm text-cream/80 text-xs leading-relaxed italic">
+                  {proDev.castingNote}
+                </p>
+              )}
             </div>
           </div>
+
+          <p className="mt-6 font-dm text-cream/45 text-sm leading-relaxed max-w-3xl">
+            The fee is the same for every division — Youth, Junior, Company Artists, and Flex.
+          </p>
         </div>
       </section>
 
-      {/* Divisions */}
+      {/* Which track — pointer to /company, which owns the track descriptions */}
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="Who It's For">
-            COMPANY <span className="text-gradient">DIVISIONS</span>
-          </SectionHead>
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
-            <div className="grid sm:grid-cols-2 gap-px bg-white/[0.06]">
-              {DIVISIONS.map((d) => (
-                <div key={d.name} className="bg-[#0c0913] p-8 flex flex-col">
+          <div className="rounded-3xl bg-[#0c0913] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
+              <h3 className="font-bebas text-2xl text-cream tracking-widest">
+                THE FEE COVERS ALL FOUR TRACKS
+              </h3>
+              <Link
+                href="/company"
+                className="font-dm text-sm text-gold hover:underline underline-offset-4"
+              >
+                See what each track involves →
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {AUDITION_TIERS.map((tier) => (
+                <div key={tier.name} className="flex items-start gap-3">
                   <span
-                    className="block h-0.5 w-8 rounded-full mb-5"
-                    style={{ background: `linear-gradient(90deg, ${d.color}, ${d.color}00)` }}
+                    className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: tier.color }}
                   />
-                  <div className="font-dm text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: d.color }}>
-                    {d.ages}
-                  </div>
-                  <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">{d.name}</h3>
-                  <p className="font-dm text-cream/60 text-sm leading-relaxed mb-5">{d.description}</p>
-                  <p className="font-dm text-[11px] text-cream/40 tracking-widest uppercase mb-2">
-                    {d.receivesLabel}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {d.receives.map((x) => (
-                      <li key={x} className="flex items-start gap-2 font-dm text-cream/75 text-sm">
-                        <span style={{ color: d.color }} className="mt-0.5">✓</span>
-                        {x}
-                      </li>
-                    ))}
-                  </ul>
-                  {d.comp && (
-                    <p className="mt-5 pt-4 border-t border-white/[0.06] font-dm text-cream/55 text-xs leading-relaxed">
-                      {d.comp}
+                  <div>
+                    <p className="font-bebas text-lg text-cream tracking-widest leading-none">
+                      {tier.name}
                     </p>
-                  )}
+                    <p className="font-dm text-cream/45 text-xs mt-1">{tier.ages}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -328,42 +166,28 @@ export default function DetailsPage() {
         </div>
       </section>
 
-      {/* Performance & casting */}
+      {/* Casting rules */}
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHead eyebrow="What to Expect">
-            PERFORMANCE &amp; <span className="text-gradient">CASTING</span>
+            HOW ROLES ARE <span className="text-gradient">ASSIGNED</span>
           </SectionHead>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="rounded-2xl bg-[#0c0913] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-              <p className="font-dm text-cream/55 text-sm mb-2">Does membership guarantee performance opportunities?</p>
-              <p className="font-bebas text-3xl text-gold tracking-widest mb-2">YES</p>
-              <p className="font-dm text-cream/65 text-sm leading-relaxed">
-                Accepted company members participate in EPC productions. Every company member performs.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-[#0c0913] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-              <p className="font-dm text-cream/55 text-sm mb-2">Does it guarantee a Featured or Principal role?</p>
-              <p className="font-bebas text-3xl text-cream/80 tracking-widest mb-2">NOT AUTOMATICALLY</p>
-              <p className="font-dm text-cream/65 text-sm leading-relaxed">
-                Every member performs, but Featured and Principal roles are earned through the casting process for each production.
-              </p>
-            </div>
-          </div>
-
-          <div className="font-dm text-cream/70 text-sm leading-relaxed space-y-4 max-w-3xl">
+          <div className="font-dm text-cream/70 text-base leading-relaxed space-y-4 max-w-3xl">
             <p>
-              Every performer takes part in the audition and casting process — auditioning
-              for Featured or Principal opportunities, or being invited by the Artistic
-              Team for consideration. Many productions need a strong ensemble to support
-              the artistic vision, and role assignments vary from production to production:
-              a performer may be an Ensemble Artist in one show and a Principal Artist in another.
+              <span className="text-cream font-semibold">
+                Membership guarantees you perform. It does not automatically guarantee a
+                Featured or Principal role.
+              </span>{" "}
+              Those are earned through the casting process for each production, and role
+              assignments vary from show to show — a performer may be an Ensemble Artist in
+              one production and a Principal Artist in the next.
             </p>
             <p>
-              <span className="text-cream font-semibold">Junior performers can be cast as Ensemble, Featured, or Principal Artists.</span>{" "}
-              Opportunities are based on the needs of the production and the casting process —
-              age alone does not determine role placement.
+              Every performer takes part in the audition and casting process, either
+              auditioning for Featured or Principal opportunities or being invited by the
+              Artistic Team for consideration. Junior performers are eligible for Ensemble,
+              Featured, and Principal roles — age alone does not determine placement.
             </p>
           </div>
         </div>
@@ -429,13 +253,13 @@ export default function DetailsPage() {
             <div className="rounded-2xl bg-[#0c0913] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
               <p className="font-bebas text-xl text-gold tracking-widest mb-2">Artists 16 &amp; Older</p>
               <p className="font-dm text-cream/65 text-sm leading-relaxed">
-                Eligible to receive <span className="text-cream font-semibold">cash compensation</span> based on the role earned within a production.
+                Eligible to receive <span className="text-cream font-semibold">cash compensation</span> based on the role earned within a production, plus eligibility for future incentive and profit-sharing programs.
               </p>
             </div>
             <div className="rounded-2xl bg-[#0c0913] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
               <p className="font-bebas text-xl text-gold tracking-widest mb-2">Artists Under 16</p>
               <p className="font-dm text-cream/65 text-sm leading-relaxed">
-                Receive <span className="text-cream font-semibold">company credits</span> — usable toward membership fees, workshops, intensives, merchandise, special events, and select future opportunities.
+                Receive <span className="text-cream font-semibold">company credits</span> based on the role earned — usable toward membership fees, workshops, intensives, merchandise, special events, and select future opportunities.
               </p>
             </div>
           </div>
@@ -443,7 +267,7 @@ export default function DetailsPage() {
           {/* Role comp table */}
           <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
-              {ROLE_COMP.map((r) => (
+              {ROLE_COMPENSATION.map((r) => (
                 <div key={r.role} className="bg-[#0c0913] p-7 flex flex-col">
                   <span
                     className="block h-0.5 w-8 rounded-full mb-5"
@@ -502,25 +326,6 @@ export default function DetailsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHead eyebrow="Good to Know">
-            COMMON <span className="text-gradient">QUESTIONS</span>
-          </SectionHead>
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
-            <div className="grid sm:grid-cols-2 gap-px bg-white/[0.06]">
-              {COMP_FAQ.map((f) => (
-                <div key={f.q} className="bg-[#0c0913] p-7">
-                  <h3 className="font-bebas text-lg text-gold tracking-widest mb-2">{f.q}</h3>
-                  <p className="font-dm text-cream/65 text-sm leading-relaxed">{f.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -529,7 +334,7 @@ export default function DetailsPage() {
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8 max-w-xl mx-auto">
             Skater, dancer, movement artist, or emerging performer — EPC is the chance to
-            help build a company from the very beginning. Register your interest or reach out.
+            help build a company from the very beginning.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
@@ -539,12 +344,19 @@ export default function DetailsPage() {
               Register Interest
             </Link>
             <Link
-              href="/contact"
+              href="/faq"
               className="inline-block px-8 py-4 border border-cream/30 text-cream font-dm font-semibold text-base rounded-lg hover:border-cream/60 hover:bg-white/5 transition-all duration-200"
             >
-              Contact Us
+              Read the FAQ
             </Link>
           </div>
+          <p className="mt-6 font-dm text-cream/40 text-sm">
+            Questions about eligibility, housing, travel, or visas are answered on the{" "}
+            <Link href="/faq" className="text-gold hover:underline underline-offset-4">
+              FAQ page
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

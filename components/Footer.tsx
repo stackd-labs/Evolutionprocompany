@@ -11,6 +11,7 @@ const exploreLinks = [
 
 const joinLinks = [
   { label: "Join EPC", href: "/company" },
+  { label: "Fees & Pay", href: "/details" },
   { label: "Auditions", href: "/shows#register" },
   { label: "Work With Us", href: "/work-with-us" },
   { label: "Partnerships", href: "/partnerships" },
@@ -114,7 +115,6 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Evolution Production Company. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/details" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Company Details</Link>
             <Link href="/privacy" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Privacy Policy</Link>
             <Link href="/terms" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Terms of Use</Link>
           </div>

@@ -14,7 +14,8 @@ export const BRAND = {
 export const ASCEND = {
   theme: "Ascend",
   tagline: "The Inaugural EPC Production",
-  performanceWindow: "September 2026",
+  // No month announced publicly — the flyer reads "Coming 2027 · Dates Coming Soon".
+  performanceWindow: "2027",
   status: "Founding Season",
   color: "#C2185B",
   summary:
@@ -30,12 +31,12 @@ export const ASCEND = {
     {
       label: "Auditions",
       value:
-        "Founding-roster auditions are open by interest registration now. Skaters, dancers, movement artists, and specialty performers are encouraged to register.",
+        "We are casting the founding roster now. Auditions are open by interest registration — skaters, dancers, movement artists, and specialty performers are encouraged to register.",
     },
     {
       label: "Timeline",
       value:
-        "Founding company forms in 2026, with the inaugural performance in September 2026.",
+        "Casting and company formation are underway now, with the inaugural performance coming in 2027. Specific dates are announced soon.",
     },
     {
       label: "Company Participation",
@@ -45,12 +46,12 @@ export const ASCEND = {
     {
       label: "Tickets",
       value:
-        "Ticket information will be announced ahead of the September 2026 premiere. Join the company list to be first to know.",
+        "Ticket information will be announced ahead of the 2027 premiere. Join the company list to be first to know.",
     },
     {
       label: "Location",
       value:
-        "Staged in the round in the Washington DC area (DMV). The specific venue is announced ahead of the September 2026 premiere.",
+        "Staged in the round in the Washington DC area (DMV). The specific venue is announced ahead of the 2027 premiere.",
     },
   ],
 };
@@ -59,14 +60,14 @@ export const ASCEND = {
 export const FUTURE_PRODUCTIONS = [
   {
     theme: "Illuminate",
-    window: "Winter 2026",
+    window: "Winter 2027",
     description:
       "A year-end immersive production carrying the founding company into the holiday season.",
     color: "#E8334A",
   },
   {
     theme: "Ignite",
-    window: "Spring 2027",
+    window: "Spring 2028",
     description:
       "A high-energy continuation of the EPC experience, building on the momentum of the founding season.",
     color: "#7B2FBE",
@@ -74,7 +75,7 @@ export const FUTURE_PRODUCTIONS = [
 ];
 
 export const STATS = [
-  { value: "Sept '26", label: "Inaugural Production" },
+  { value: "2027", label: "Inaugural Production" },
   { value: "4", label: "Company Tracks" },
   { value: "All Ages", label: "Performers Welcome" },
   { value: "DMV", label: "Founding Region" },
@@ -157,6 +158,140 @@ export const MEMBERSHIP_TIERS = [
       "Priority Access to Select Workshops & Events",
     ],
     featured: true,
+  },
+];
+
+// Role-based pay. Single source of truth: the /details rate table renders this in full,
+// and /company links to it using PERFORMER_PAY_SUMMARY below.
+export const ROLE_COMPENSATION = [
+  {
+    role: "Ensemble Artists",
+    perShow: "$50–$100",
+    perProduction: "$300–$600",
+    color: "#7B2FBE",
+    responsibilities: [
+      "Ensemble choreography",
+      "Group performance work",
+      "Scene transitions",
+      "Production support",
+      "Company ensemble participation",
+    ],
+  },
+  {
+    role: "Featured Artists",
+    perShow: "$100–$200",
+    perProduction: "$600–$1,200",
+    color: "#C2185B",
+    responsibilities: [
+      "Featured performance moments",
+      "Specialty acts",
+      "Supporting storytelling roles",
+      "Significant artistic contributions",
+    ],
+  },
+  {
+    role: "Principal Artists",
+    perShow: "$200–$400",
+    perProduction: "$1,200–$2,400",
+    color: "#E8334A",
+    responsibilities: [
+      "Lead artistic roles",
+      "Featured storytelling moments",
+      "Major production responsibilities",
+    ],
+  },
+];
+
+// Derived from ROLE_COMPENSATION — the range shown to performers who are still deciding.
+export const PERFORMER_PAY_SUMMARY = {
+  perShow: "$50–$400",
+  perProduction: "$300–$2,400",
+  eligibility: "Company Artists 16+",
+  note: "Performers under 16 receive company credits based on the role earned.",
+};
+
+// The full member experience. Surfaced on /company — these justify the membership fee.
+export const MEMBER_EXPERIENCES = [
+  {
+    title: "Company Bonding Experiences",
+    color: "#7B2FBE",
+    items: [
+      "Company Kickoff Event – Start the season together with a welcome gathering for performers and creative team members.",
+      "Cast Celebrations – Post-show gatherings to celebrate performances and build community.",
+      "End-of-Season Celebration – A special event recognizing the accomplishments of the company.",
+    ],
+  },
+  {
+    title: "Creative Retreats",
+    color: "#C2185B",
+    items: [
+      "Choreography Lab Days – Collaborative sessions where skaters and dancers create new pieces and experiment with ideas.",
+      "Creative Development Workshops – Dedicated time to develop new show concepts and performance material.",
+      "Production Creation Weekends – Intensive weekends focused on building future EPC productions.",
+    ],
+  },
+  {
+    title: "Performance Inspiration Trips",
+    color: "#E8334A",
+    items: [
+      "Broadway & Theatre Trips – Group outings to experience professional productions and stage performances.",
+      "Dance & Performance Show Visits – Attend professional dance and performance events for inspiration.",
+      "Cirque-Style Production Experiences – Watch large-scale entertainment productions and study staging and artistry.",
+    ],
+  },
+  {
+    title: "Skating & Dance Event Trips",
+    color: "#7B2FBE",
+    items: [
+      "Figure Skating Competitions – Attend major competitions to watch elite athletes perform.",
+      "Theatre on Ice & Synchronized Skating Events – Experience innovative team skating productions.",
+      "Professional Ice Show Performances – Attend touring ice shows to learn from professional performers.",
+    ],
+  },
+  {
+    title: "Training & Workshop Opportunities",
+    color: "#C2185B",
+    items: [
+      "Guest Artist Workshops – Training sessions with visiting choreographers and performers.",
+      "Performance & Acting Classes – Workshops focused on expression, storytelling, and stage presence.",
+      "Partnering & Lift Training – Skill development sessions for collaborative performance work.",
+    ],
+  },
+  {
+    title: "Content Creation Opportunities",
+    color: "#E8334A",
+    items: [
+      "Company Photoshoots – Professional photography sessions featuring EPC performers.",
+      "Performance Video Projects – Filmed choreography and performance pieces for portfolios and promotion.",
+      "Behind-the-Scenes Content Days – Creative filming sessions highlighting the company and its artists.",
+    ],
+  },
+  {
+    title: "Team Adventures",
+    color: "#7B2FBE",
+    items: [
+      "Group Activity Nights – Fun outings such as bowling, mini golf, or team games.",
+      "Adventure Experiences – Activities like rock climbing or ziplining that build trust and teamwork.",
+      "Seasonal Group Outings – Summer park days, beach trips, or other seasonal adventures.",
+    ],
+  },
+  {
+    title: "Career Development",
+    color: "#C2185B",
+    items: [
+      "Audition Preparation Workshops – Learn how to prepare for auditions and professional opportunities.",
+      "Portfolio & Resume Guidance – Support in developing performance resumes and professional materials.",
+      "Industry Insight Sessions – Conversations with professionals from the performing arts world.",
+    ],
+  },
+  {
+    title: "Special Getaways",
+    color: "#E8334A",
+    items: [
+      "Weekend Creative Retreats – Short retreats focused on artistic collaboration and team building.",
+      "Theme Park Performance Trips – Group outings to parks known for entertainment productions.",
+      "NYC or Major City Day Trips – Travel together to experience world-class performances.",
+    ],
   },
 ];
 
@@ -264,6 +399,11 @@ export const AUDITION_TIERS = [
 
 export const FAQ = [
   {
+    question: "Can anyone audition?",
+    answer:
+      "Yes. Anyone meeting the age and eligibility requirements may audition for company placement.",
+  },
+  {
     question: "Where are performances held?",
     answer: "Throughout the DMV region.",
   },
@@ -316,7 +456,7 @@ export const FAQ = [
   {
     question: "When are the next auditions?",
     answer:
-      "Auditions are coming to the DMV area soon. Register your interest now to be first notified of dates, locations, and requirements.",
+      "We are casting now for the founding company in the DMV area. Register your interest to be notified of audition dates, locations, and requirements — the inaugural production, Ascend, is coming in 2027.",
   },
   {
     question: "Can members move between company tracks as they grow?",
@@ -350,22 +490,13 @@ export const FAQ = [
   },
 ];
 
-export const WHAT_MAKES_DIFFERENT = [
-  {
-    title: "Continuous Performance",
-    color: "#7B2FBE",
-    points: ["No recital format.", "No stop-and-start routines.", "One immersive experience."],
-  },
-  {
-    title: "Multi-Discipline Cast",
-    color: "#C2185B",
-    points: ["Skating.", "Dance.", "Movement."],
-  },
-  {
-    title: "Up-Close Audience Experience",
-    color: "#E8334A",
-    points: ["Immersive arena staging.", "On-ice seating.", "Intimate performance zones."],
-  },
+// /faq is the single home for every question. /shows shows only this audition-relevant
+// subset — filtered from FAQ above, so the answers can never diverge.
+export const AUDITION_FAQ_QUESTIONS = [
+  "Can anyone audition?",
+  "When are the next auditions?",
+  "Do I need to skate AND dance?",
+  "Do I have to leave my current studio, club, or team to join EPC?",
 ];
 
 export const SEEKING = [
@@ -392,12 +523,12 @@ export const SEEKING = [
 ];
 
 export const FOUNDING_SEASON = {
-  year: "2026",
+  year: "2026–27",
   intro:
     "Every member joining during the inaugural season becomes a Founding Member of Evolution Production Company.",
   benefits: [
     "Founding Member Recognition",
-    "Locked-In Rates Through 2027",
+    "Locked-In Rates Through 2028",
     "Priority Opportunities",
     "Program Recognition",
   ],

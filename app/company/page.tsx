@@ -3,97 +3,17 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Membership from "@/components/Membership";
 import Link from "next/link";
-import { AUDITION_TIERS } from "@/lib/constants";
+import {
+  AUDITION_TIERS,
+  MEMBER_EXPERIENCES,
+  PERFORMER_PAY_SUMMARY,
+} from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Join EPC | Evolution Production Company",
   description:
     "Explore EPC's company structure — Youth Company, Junior Company, Company Artists, and the Flex Track — plus training, curriculum, and membership.",
 };
-
-const EXPERIENCE_CATEGORIES = [
-  {
-    title: "Company Bonding Experiences",
-    color: "#7B2FBE",
-    items: [
-      "Company Kickoff Event – Start the season together with a welcome gathering for performers and creative team members.",
-      "Cast Celebrations – Post-show gatherings to celebrate performances and build community.",
-      "End-of-Season Celebration – A special event recognizing the accomplishments of the company.",
-    ],
-  },
-  {
-    title: "Creative Retreats",
-    color: "#C2185B",
-    items: [
-      "Choreography Lab Days – Collaborative sessions where skaters and dancers create new pieces and experiment with ideas.",
-      "Creative Development Workshops – Dedicated time to develop new show concepts and performance material.",
-      "Production Creation Weekends – Intensive weekends focused on building future EPC productions.",
-    ],
-  },
-  {
-    title: "Performance Inspiration Trips",
-    color: "#E8334A",
-    items: [
-      "Broadway & Theatre Trips – Group outings to experience professional productions and stage performances.",
-      "Dance & Performance Show Visits – Attend professional dance and performance events for inspiration.",
-      "Cirque-Style Production Experiences – Watch large-scale entertainment productions and study staging and artistry.",
-    ],
-  },
-  {
-    title: "Skating & Dance Event Trips",
-    color: "#7B2FBE",
-    items: [
-      "Figure Skating Competitions – Attend major competitions to watch elite athletes perform.",
-      "Theatre on Ice & Synchronized Skating Events – Experience innovative team skating productions.",
-      "Professional Ice Show Performances – Attend touring ice shows to learn from professional performers.",
-    ],
-  },
-  {
-    title: "Training & Workshop Opportunities",
-    color: "#C2185B",
-    items: [
-      "Guest Artist Workshops – Training sessions with visiting choreographers and performers.",
-      "Performance & Acting Classes – Workshops focused on expression, storytelling, and stage presence.",
-      "Partnering & Lift Training – Skill development sessions for collaborative performance work.",
-    ],
-  },
-  {
-    title: "Content Creation Opportunities",
-    color: "#E8334A",
-    items: [
-      "Company Photoshoots – Professional photography sessions featuring EPC performers.",
-      "Performance Video Projects – Filmed choreography and performance pieces for portfolios and promotion.",
-      "Behind-the-Scenes Content Days – Creative filming sessions highlighting the company and its artists.",
-    ],
-  },
-  {
-    title: "Team Adventures",
-    color: "#7B2FBE",
-    items: [
-      "Group Activity Nights – Fun outings such as bowling, mini golf, or team games.",
-      "Adventure Experiences – Activities like rock climbing or ziplining that build trust and teamwork.",
-      "Seasonal Group Outings – Summer park days, beach trips, or other seasonal adventures.",
-    ],
-  },
-  {
-    title: "Career Development",
-    color: "#C2185B",
-    items: [
-      "Audition Preparation Workshops – Learn how to prepare for auditions and professional opportunities.",
-      "Portfolio & Resume Guidance – Support in developing performance resumes and professional materials.",
-      "Industry Insight Sessions – Conversations with professionals from the performing arts world.",
-    ],
-  },
-  {
-    title: "Special Getaways",
-    color: "#E8334A",
-    items: [
-      "Weekend Creative Retreats – Short retreats focused on artistic collaboration and team building.",
-      "Theme Park Performance Trips – Group outings to parks known for entertainment productions.",
-      "NYC or Major City Day Trips – Travel together to experience world-class performances.",
-    ],
-  },
-];
 
 const curriculum = [
   {
@@ -125,9 +45,9 @@ const curriculum = [
 
 
 const productionCycle = [
-  { months: "Founding Season", show: "Ascend", perform: "September 2026" },
-  { months: "Following", show: "Illuminate", perform: "Winter 2026" },
-  { months: "Following", show: "Ignite", perform: "Spring 2027" },
+  { months: "Founding Season", show: "Ascend", perform: "2027 · Dates TBA" },
+  { months: "Following", show: "Illuminate", perform: "Winter 2027" },
+  { months: "Following", show: "Ignite", perform: "Spring 2028" },
 ];
 
 export default function CompanyPage() {
@@ -156,37 +76,14 @@ export default function CompanyPage() {
               more often, challenge yourself artistically, or be part of a fresh and inspiring company environment,
               EPC offers a place to grow.
             </p>
+            <p className="font-dm text-cream/60 text-base leading-relaxed max-w-2xl mb-6">
+              EPC works around your existing training schedule, not against it — studio and
+              club commitments come first. We proudly support the coaches, studios, and
+              skating clubs that develop performers, and we are not here to replace them.
+            </p>
             <p className="font-cormorant italic text-cream/60 text-xl">
               One standard. A path for every serious performer.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Built to work alongside */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Our Philosophy
-              </p>
-              <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
-                BUILT TO WORK ALONGSIDE{" "}
-                <span className="text-gradient">YOUR TRAINING</span>
-              </h2>
-              <p className="font-dm text-cream/65 text-base leading-relaxed">
-                We proudly support the coaches, studios, skating clubs, and programs that help performers develop
-                their craft. EPC is not designed to replace a performer&apos;s home program. Instead, we provide an
-                additional outlet for performance, artistry, and collaboration. We believe the strongest artists
-                grow through diverse experiences, strong mentorship, and opportunities to work with others
-                across disciplines.
-              </p>
-            </div>
-            <div className="space-y-4 font-dm text-cream/60 text-base leading-relaxed">
-              <p>EPC works around your existing training schedule — not against it. Studio and club commitments come first.</p>
-              <p>Skaters, dancers, and performers from every background train together. The strongest artists grow through diverse experiences and real stage time beyond competitions and recitals.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -200,8 +97,13 @@ export default function CompanyPage() {
               OUR COMPANY <span className="text-gradient">STRUCTURE</span>
             </h2>
             <p className="mt-3 font-dm text-cream/50 text-sm max-w-xl mx-auto">
-              All casting is audition-based. Principal spots and corporate spots are earned
-              on the floor — not by membership tier or age.
+              Four tracks, one standard. Placement is by age — plus a Flex Track for anyone
+              who wants to be part of EPC without a performance commitment. Audition
+              requirements for each track are on{" "}
+              <Link href="/shows" className="text-gold hover:underline underline-offset-4">
+                the Ascend page
+              </Link>
+              .
             </p>
           </div>
 
@@ -225,38 +127,39 @@ export default function CompanyPage() {
                   <h3 className="font-bebas text-3xl text-cream tracking-widest mb-3">
                     {tier.name}
                   </h3>
-                  <p className="font-dm text-cream/70 text-sm leading-relaxed mb-5">
+                  <p className="font-dm text-cream/70 text-sm leading-relaxed">
                     {tier.description}
                   </p>
-                  <ul className="space-y-2">
-                    {tier.requirements.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm font-dm text-cream/65">
-                        <span className="mt-0.5" style={{ color: tier.color }}>✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Fee philosophy note + link to full details */}
+          {/* Fee philosophy + the pay hook. Rates themselves live on /details. */}
           <p className="mt-12 max-w-2xl mx-auto text-center font-dm text-cream/55 text-sm leading-relaxed">
             Membership fees go directly toward development, choreography, production costs, and costumes — so that EPC can compensate its instructors,
             staff, and performing artists at a professional standard. You&apos;re not paying to be in the company. You&apos;re investing in the infrastructure
             that makes professional performance possible.
           </p>
-          <div className="mt-8 text-center">
+
+          <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-[#0c0913] p-7 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-2">
+              And EPC pays its performers
+            </p>
+            <p className="font-bebas text-4xl md:text-5xl text-cream tracking-widest leading-none mb-3">
+              {PERFORMER_PAY_SUMMARY.perShow}{" "}
+              <span className="text-xl text-cream/50">per show</span>
+            </p>
+            <p className="font-dm text-cream/60 text-sm leading-relaxed max-w-lg mx-auto">
+              {PERFORMER_PAY_SUMMARY.eligibility} are eligible for cash compensation based on
+              the role earned. {PERFORMER_PAY_SUMMARY.note}
+            </p>
             <Link
               href="/details"
-              className="inline-block px-8 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.4)] transition-all duration-200"
+              className="mt-6 inline-block px-8 py-4 bg-gold text-dark font-dm font-bold text-base rounded-lg hover:bg-gold/90 hover:shadow-[0_0_30px_rgba(245,200,66,0.4)] transition-all duration-200"
             >
-              See Full Fees, Compensation &amp; Schedule →
+              See Full Fees &amp; Pay →
             </Link>
-            <p className="mt-3 font-dm text-cream/40 text-xs">
-              Every track, fee, and payout — laid out on the Company Details page.
-            </p>
           </div>
         </div>
       </section>
@@ -342,19 +245,41 @@ export default function CompanyPage() {
           </div>
 
           <p className="font-dm text-cream/65 text-base leading-relaxed text-center max-w-3xl mx-auto mb-10">
-            Membership is about more than rehearsals. EPC builds a full company experience — from production nights and creative retreats to career development and team outings. Full details are shared when you join the company.
+            Membership is about more than rehearsals. EPC builds a full company experience — from production nights and creative retreats to career development and team outings. Open any category to see what it includes.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {EXPERIENCE_CATEGORIES.map((cat) => (
-              <span
-                key={cat.title}
-                className="px-4 py-2 rounded-full text-sm font-dm font-medium border border-white/10 text-cream/70"
-                style={{ borderColor: cat.color + "40", color: cat.color }}
-              >
-                {cat.title}
-              </span>
-            ))}
+          <div className="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+            <div className="divide-y divide-white/[0.06]">
+              {MEMBER_EXPERIENCES.map((cat) => (
+                <details key={cat.title} className="group bg-[#0c0913]">
+                  <summary className="flex cursor-pointer list-none items-center gap-4 p-5 transition-colors duration-200 hover:bg-white/[0.02]">
+                    <span
+                      className="h-2 w-2 flex-shrink-0 rounded-full"
+                      style={{ backgroundColor: cat.color }}
+                    />
+                    <h3 className="font-bebas text-xl tracking-widest text-cream">
+                      {cat.title}
+                    </h3>
+                    <span className="ml-auto font-dm text-lg text-cream/30 transition-transform duration-200 group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <ul className="space-y-2.5 px-5 pb-5 pl-11">
+                    {cat.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 font-dm text-sm leading-relaxed text-cream/65"
+                      >
+                        <span className="mt-0.5 flex-shrink-0" style={{ color: cat.color }}>
+                          →
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -366,8 +291,8 @@ export default function CompanyPage() {
             READY TO <span className="text-gradient">EVOLVE?</span>
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8">
-            Auditions are coming. Register your interest now and be the first
-            to know when dates are announced.
+            We are casting now for the founding company. Register your interest
+            and be the first to know when audition dates are announced.
           </p>
           <Link
             href="/shows#register"

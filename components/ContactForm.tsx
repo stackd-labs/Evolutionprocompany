@@ -164,16 +164,18 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <section id="register" className="relative py-20 bg-dark overflow-hidden">
+    <section id="register" className="relative py-14 md:py-20 bg-dark overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(123,47,190,0.1)_0%,_transparent_60%)] pointer-events-none" />
       <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        {/* The gradient hairline stays — it separates the closing CTA from the
+            page above it. The eyebrow and gradient headline went: the gold
+            button is the dominant element here, as it should be on a CTA. */}
         <div className="h-px w-24 mx-auto bg-gradient-to-r from-purple via-magenta to-red rounded-full mb-10" />
-        <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">Take the First Step</p>
         <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest mb-4">
-          REGISTER <span className="text-gradient">YOUR INTEREST</span>
+          REGISTER YOUR INTEREST
         </h2>
         <p className="font-dm text-cream/60 text-base max-w-sm mx-auto mb-8">
-          Auditions are coming to the Washington DC area. Be the first to know when dates are announced.
+          We are casting now in the Washington DC area for the founding company. Ascend is coming in 2027 — register to be first to know when audition dates are announced.
         </p>
         <button
           onClick={() => setOpen(true)}

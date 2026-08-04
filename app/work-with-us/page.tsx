@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ApplicationForm from "@/components/ApplicationForm";
@@ -97,8 +98,16 @@ export default function WorkWithUsPage() {
           <div className="text-center mb-14">
             <p className="font-cormorant italic text-gold text-lg tracking-widest mb-3">Other Ways In</p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
-              MORE WAYS TO <span className="text-gradient">CONTRIBUTE</span>
+              ROLES WE ARE <span className="text-gradient">HIRING FOR</span>
             </h2>
+            <p className="mt-4 font-dm text-cream/50 text-sm max-w-xl mx-auto">
+              These are roles for people. If you represent a rink, venue, brand, or
+              organization,{" "}
+              <Link href="/partnerships" className="text-gold hover:underline underline-offset-4">
+                Partnerships
+              </Link>{" "}
+              is the right page.
+            </p>
           </div>
 
           <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">

@@ -105,7 +105,9 @@ export default function About() {
 
         {/* Photo strip */}
         <FadeUp delay={0.1}>
-          <div className="grid grid-cols-3 gap-3 md:gap-4">
+          {/* Two photos, not three — the third slot held a stock image whose
+              rink boards carried another company's branding. */}
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
             {[
               {
                 src: "/spring-show.png",
@@ -114,10 +116,6 @@ export default function About() {
               {
                 src: "/our-story-2.png",
                 alt: "Dancer performing on stage",
-              },
-              {
-                src: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&q=80",
-                alt: "Ice skating performance",
               },
             ].map((photo) => (
               <div
