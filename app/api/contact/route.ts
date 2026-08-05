@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { transporter, ADMIN_EMAIL } from "@/lib/mailer";
+import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
 import { escapeHtml, limit } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
@@ -35,22 +35,28 @@ export async function POST(req: NextRequest) {
     const eSubject = escapeHtml(subject);
     const eMessage = escapeHtml(message);
 
-    await transporter.sendMail({
-      from: "EPC Website <evolutionprocompany@gmail.com>",
-      to: ADMIN_EMAIL,
-      subject: `Contact: ${eSubject} — ${eName}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;background:#0D0A14;color:#FFF8F0;border-radius:12px;">
-          <h2 style="color:#F5C842;margin:0 0 20px;">New Contact Message</h2>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;width:130px;">Name</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eName}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Email</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eEmail}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Subject</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eSubject}</td></tr>
-            <tr><td style="padding:10px 0;color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Message</td><td style="padding:10px 0;font-size:14px;">${eMessage}</td></tr>
-          </table>
-        </div>
-      `,
-    });
+    await Promise.all([
+      notifyAdmin({
+        subject: `Contact: ${eSubject} — ${eName}`,
+        heading: "New Contact Message",
+        replyTo: email,
+        rows:
+          row("Name", eName) +
+          row("Email", eEmail) +
+          row("Subject", eSubject) +
+          row("Message", eMessage, true),
+      }),
+      sendConfirmation({
+        to: email,
+        subject: "We received your message — EPC",
+        heading: `Thanks for reaching out, ${escapeHtml(firstName)}`,
+        body: paragraphs(
+          `We&rsquo;ve received your message about &ldquo;${eSubject}&rdquo; and it&rsquo;s with the right person.`,
+          "We read everything and respond to serious inquiries within 48 hours.",
+          "You can reply directly to this email if you need to add anything.",
+        ),
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { transporter, ADMIN_EMAIL } from "@/lib/mailer";
+import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
 import { escapeHtml, limit } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
@@ -40,24 +40,30 @@ export async function POST(req: NextRequest) {
     const eType = escapeHtml(partnershipType);
     const eMessage = message ? escapeHtml(message) : null;
 
-    await transporter.sendMail({
-      from: "EPC Website <evolutionprocompany@gmail.com>",
-      to: ADMIN_EMAIL,
-      subject: `Partnership Inquiry: ${eType} — ${eOrg}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;background:#0D0A14;color:#FFF8F0;border-radius:12px;">
-          <h2 style="color:#F5C842;margin:0 0 20px;">New Partnership Inquiry</h2>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;width:130px;">Name</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eName}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Organization</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eOrg}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Email</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eEmail}</td></tr>
-            ${ePhone ? `<tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Phone</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${ePhone}</td></tr>` : ""}
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Type</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eType}</td></tr>
-            ${eMessage ? `<tr><td style="padding:10px 0;color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Message</td><td style="padding:10px 0;font-size:14px;">${eMessage}</td></tr>` : ""}
-          </table>
-        </div>
-      `,
-    });
+    await Promise.all([
+      notifyAdmin({
+        subject: `Partnership Inquiry: ${eType} — ${eOrg}`,
+        heading: "New Partnership Inquiry",
+        replyTo: email,
+        rows:
+          row("Name", eName) +
+          row("Organization", eOrg) +
+          row("Email", eEmail) +
+          (ePhone ? row("Phone", ePhone) : "") +
+          row("Type", eType, !eMessage) +
+          (eMessage ? row("Message", eMessage, true) : ""),
+      }),
+      sendConfirmation({
+        to: email,
+        subject: "Your EPC partnership inquiry — received",
+        heading: `Thanks, ${escapeHtml(firstName)}`,
+        body: paragraphs(
+          `We&rsquo;ve received your <strong style="color:#FFF8F0;">${eType}</strong> inquiry on behalf of ${eOrg}.`,
+          "Every EPC partnership is built around the partner, so the next step is a conversation about what you&rsquo;re trying to achieve. We&rsquo;ll come back to you with a proposal.",
+          "Reply to this email if there&rsquo;s anything you&rsquo;d like us to know first.",
+        ),
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {

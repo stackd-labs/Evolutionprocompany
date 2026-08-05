@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { transporter, ADMIN_EMAIL } from "@/lib/mailer";
+import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
 import { escapeHtml, limit } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
@@ -44,24 +44,33 @@ export async function POST(req: NextRequest) {
     const eDiscipline = escapeHtml(discipline);
     const eBio = bio ? escapeHtml(bio) : null;
 
-    await transporter.sendMail({
-      from: "EPC Website <evolutionprocompany@gmail.com>",
-      to: ADMIN_EMAIL,
-      subject: `New Audition Interest: ${eName} — ${eDiscipline}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;background:#0D0A14;color:#FFF8F0;border-radius:12px;">
-          <h2 style="color:#F5C842;margin:0 0 20px;">New Audition Interest Registration</h2>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;width:130px;">Name</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eName}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Email</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eEmail}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Age</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${parsedAge}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Location</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eCityState}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Discipline</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eDiscipline}</td></tr>
-            ${eBio ? `<tr><td style="padding:10px 0;color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Bio</td><td style="padding:10px 0;font-size:14px;">${eBio}</td></tr>` : ""}
-          </table>
-        </div>
-      `,
-    });
+    // Mail is sent after the row is safely stored, and neither helper throws —
+    // a mail outage must not tell the performer their registration failed.
+    await Promise.all([
+      notifyAdmin({
+        subject: `New Audition Interest: ${eName} — ${eDiscipline}`,
+        heading: "New Audition Interest Registration",
+        replyTo: email,
+        rows:
+          row("Name", eName) +
+          row("Email", eEmail) +
+          row("Age", String(parsedAge)) +
+          row("Location", eCityState) +
+          row("Discipline", eDiscipline, !eBio) +
+          (eBio ? row("Bio", eBio, true) : ""),
+      }),
+      sendConfirmation({
+        to: email,
+        subject: "We've got your EPC audition interest",
+        heading: `Thanks, ${escapeHtml(firstName)} — you're on the list`,
+        body: paragraphs(
+          "Your interest in auditioning for Evolution Production Company has been received.",
+          "We are casting the founding company now. Auditions are by invitation after interest registration, so the next thing you&rsquo;ll hear from us is an invitation with dates, location, and what to prepare.",
+          "Ascend, our inaugural production, comes to the DMV in Spring 2027 — and the founding cast is being built right now.",
+          "Questions in the meantime? Just reply to this email.",
+        ),
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { transporter, ADMIN_EMAIL } from "@/lib/mailer";
+import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
 import { escapeHtml, limit } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
@@ -43,25 +43,31 @@ export async function POST(req: NextRequest) {
     const ePortfolio = portfolio ? escapeHtml(portfolio) : null;
     const eWhy = why ? escapeHtml(why) : null;
 
-    await transporter.sendMail({
-      from: "EPC Website <evolutionprocompany@gmail.com>",
-      to: ADMIN_EMAIL,
-      subject: `Full Application: ${eName} — ${eRole}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;background:#0D0A14;color:#FFF8F0;border-radius:12px;">
-          <h2 style="color:#F5C842;margin:0 0 20px;">New Full Application</h2>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;width:130px;">Name</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eName}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Email</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eEmail}</td></tr>
-            ${ePhone ? `<tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Phone</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${ePhone}</td></tr>` : ""}
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Role</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eRole}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Background</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${eBackground}</td></tr>
-            ${ePortfolio ? `<tr><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Portfolio</td><td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;">${ePortfolio}</td></tr>` : ""}
-            ${eWhy ? `<tr><td style="padding:10px 0;color:rgba(255,248,240,.4);font-size:12px;text-transform:uppercase;letter-spacing:.1em;">Why EPC</td><td style="padding:10px 0;font-size:14px;">${eWhy}</td></tr>` : ""}
-          </table>
-        </div>
-      `,
-    });
+    await Promise.all([
+      notifyAdmin({
+        subject: `Full Application: ${eName} — ${eRole}`,
+        heading: "New Full Application",
+        replyTo: email,
+        rows:
+          row("Name", eName) +
+          row("Email", eEmail) +
+          (ePhone ? row("Phone", ePhone) : "") +
+          row("Role", eRole) +
+          row("Background", eBackground, !ePortfolio && !eWhy) +
+          (ePortfolio ? row("Portfolio", ePortfolio, !eWhy) : "") +
+          (eWhy ? row("Why EPC", eWhy, true) : ""),
+      }),
+      sendConfirmation({
+        to: email,
+        subject: "Your EPC application has been received",
+        heading: `Application received, ${escapeHtml(firstName)}`,
+        body: paragraphs(
+          `We&rsquo;ve received your application for <strong style="color:#FFF8F0;">${eRole}</strong>.`,
+          "Our team reviews every application personally. If your background fits what we&rsquo;re building, we&rsquo;ll reach out to talk about next steps.",
+          "You can reply directly to this email to add anything to your application.",
+        ),
+      }),
+    ]);
 
     return NextResponse.json({ success: true });
   } catch (error) {
