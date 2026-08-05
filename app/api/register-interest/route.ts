@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
+import { UPCOMING_PRODUCTION } from "@/lib/constants";
 import { escapeHtml, limit } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
@@ -65,7 +66,8 @@ export async function POST(req: NextRequest) {
         heading: `Thanks, ${escapeHtml(firstName)} — you're on the list`,
         body: paragraphs(
           "Your interest in auditioning for Evolution Production Company has been received.",
-          "We are casting the founding company right now, ahead of <strong style=\"color:#FFF8F0;\">Ascend</strong> — our inaugural production, coming to the DMV in Spring 2027.",
+          // Show name and window from UPCOMING_PRODUCTION so this can't go stale.
+          `We are casting the founding company right now, ahead of <strong style="color:#FFF8F0;">${UPCOMING_PRODUCTION.name}</strong> — ${UPCOMING_PRODUCTION.descriptor}, coming to the DMV in ${UPCOMING_PRODUCTION.window}.`,
         ),
         steps: [
           {

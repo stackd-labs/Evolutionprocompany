@@ -46,13 +46,16 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="rounded-full p-[2px] flex-shrink-0" style={{ background: "linear-gradient(135deg, #7B2FBE, #C2185B, #E8334A)" }}>
+            {/* Square mark, not the old circular crop: this logo carries the
+                wordmark, which a circle would cut off. The gradient ring is gone
+                too — the artwork is already the brand gradient. */}
+            <div className="flex-shrink-0 overflow-hidden rounded-lg">
               <Image
-                src="/logo-circle.png"
+                src="/logo-square.png"
                 alt="Evolution Production Company"
                 width={48}
                 height={48}
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-12 w-12 object-cover"
                 priority
               />
             </div>

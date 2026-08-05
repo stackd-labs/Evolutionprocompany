@@ -25,7 +25,9 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://epcperform.com"),
-  icons: { icon: "/logo-circle.png" },
+  // app/icon.png is the actual favicon (Next's file convention wins over this);
+  // kept in sync so the two can't disagree.
+  icons: { icon: "/logo-square.png" },
   title: "Evolution Production Company | Where Ice Meets Dance",
   description:
     "Evolution Production Company (EPC) is an immersive performance company blending skating, dance, and movement into continuous live experiences in the DMV. Ascend — the inaugural EPC production — is coming in Spring 2027, and we are casting the founding company now.",

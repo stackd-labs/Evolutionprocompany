@@ -56,6 +56,21 @@ export const ASCEND = {
   ],
 };
 
+/**
+ * The production currently being promoted. Emails read from this instead of
+ * naming a show and a date inline, so confirmation copy can never drift out of
+ * date the way hard-coded copy does.
+ *
+ * ▶ AFTER ASCEND PREMIERES, repoint this at the next production — Illuminate,
+ *   then Ignite. That single edit updates every outbound email.
+ */
+export const UPCOMING_PRODUCTION = {
+  name: "Ascend",
+  window: "Spring 2027",
+  // "inaugural" only holds for Ascend; drop it when this moves on.
+  descriptor: "our inaugural production",
+};
+
 // Productions that follow the inaugural season — kept intentionally minimal.
 export const FUTURE_PRODUCTIONS = [
   {

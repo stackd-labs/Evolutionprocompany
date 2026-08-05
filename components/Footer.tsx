@@ -27,13 +27,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="rounded-full p-[2px] flex-shrink-0" style={{ background: "linear-gradient(135deg, #7B2FBE, #C2185B, #E8334A)" }}>
+              <div className="flex-shrink-0 overflow-hidden rounded-lg">
                 <Image
-                  src="/logo-circle.png"
+                  src="/logo-square.png"
                   alt="Evolution Production Company"
                   width={44}
                   height={44}
-                  className="h-11 w-11 rounded-full object-cover"
+                  className="h-11 w-11 object-cover"
                 />
               </div>
               <div>
