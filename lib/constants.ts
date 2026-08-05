@@ -339,7 +339,7 @@ export const GROWTH_PHASES = [
 
 // No skill-level requirements on any track — EPC accepts all skill levels, and
 // that is stated once, prominently, on /company rather than per card.
-// Commitment is per production cycle, never the full season.
+// Membership runs for the year; performers choose which cycles they perform in.
 export const AUDITION_TIERS = [
   {
     name: "Youth Company",
@@ -350,7 +350,7 @@ export const AUDITION_TIERS = [
       "Ages 11 and under at time of audition",
       "Solo (60 seconds) required only for those seeking principal consideration",
       "Parent/guardian consent required",
-      "Commitment is per production cycle, not the full year",
+      "Membership is annual — you choose which cycles you perform in",
     ],
     color: "#7B2FBE",
   },
@@ -363,7 +363,7 @@ export const AUDITION_TIERS = [
       "Ages 12–15 at time of audition",
       "Solo (90 seconds) required only for those seeking principal consideration",
       "Parent/guardian consent required",
-      "Commitment is per production cycle, not the full year",
+      "Membership is annual — you choose which cycles you perform in",
     ],
     color: "#C2185B",
   },
@@ -377,7 +377,7 @@ export const AUDITION_TIERS = [
       "Solo (90 seconds) required only for those seeking principal consideration",
       "Resume or performance history helpful, not required",
       "Parent/guardian consent required for performers under 18",
-      "Commitment is per production cycle, not the full year",
+      "Membership is annual — you choose which cycles you perform in",
     ],
     color: "#E8334A",
   },
@@ -441,7 +441,7 @@ export const FAQ = [
   {
     question: "How much does membership cost?",
     answer:
-      "$200 a month, the same for every division — Youth, Junior, Company Artists, and Flex. The optional Professional Development Track adds $150 per quarter on top of that. Full details are on the Membership page.",
+      "$200 a month, the same for every division — Youth, Junior, Company Artists, and Flex. Membership runs for the year, but performers choose which production cycles they perform in, and dues are only owed for those cycles. The optional Professional Development Track adds $150 per quarter. Costumes are not included: each production carries a separate one-time costume fee. Full details are covered at the membership informational and on the Membership page.",
   },
   {
     question: "What is the difference between Company Members and the Professional Development Track?",
@@ -456,7 +456,7 @@ export const FAQ = [
   {
     question: "Does paying membership mean I am paying to be paid?",
     answer:
-      "No. Fees and compensation are tracked separately. Membership fees cover training and ice time, coaching and instructor fees, choreography, rehearsal space, costumes, and production costs. Compensation is earned entirely through performance — you must perform to be compensated, and membership alone does not guarantee a payout.",
+      "No. Fees and compensation are tracked separately. Membership fees cover training and ice time, coaching and instructor fees, choreography, rehearsal space, and production costs. Compensation is earned entirely through performance — you must perform to be compensated, and membership alone does not guarantee a payout.",
   },
   {
     question: "What do founding members get?",

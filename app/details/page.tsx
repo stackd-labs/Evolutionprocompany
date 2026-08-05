@@ -73,7 +73,7 @@ export default function MembershipPage() {
               </p>
               <p className="font-dm text-cream/70 text-sm leading-relaxed">
                 Membership fees go directly toward development, choreography, production
-                costs, and costumes — so that EPC can compensate its instructors, staff,
+                costs, and rehearsal space — so that EPC can compensate its instructors, staff,
                 and performing artists at a professional standard. You&apos;re not paying to
                 be in the company. You&apos;re investing in the infrastructure that makes
                 professional performance possible.
@@ -189,12 +189,20 @@ export default function MembershipPage() {
                 <p className="font-dm text-cream/85 text-sm md:text-base leading-relaxed mb-4">
                   {standard.description}
                 </p>
-                <p className="font-dm text-cream text-sm leading-relaxed">
+                <p className="font-dm text-cream text-sm leading-relaxed mb-4">
                   <span className="font-semibold">
                     Everything listed above is included
                   </span>{" "}
                   — all {standard.features.length} inclusions, for every division: Youth,
                   Junior, Company Artists, and Flex.
+                </p>
+                <p className="font-dm text-cream/90 text-sm leading-relaxed rounded-xl bg-dark/25 px-4 py-3">
+                  <span className="font-semibold">
+                    You only pay dues for the cycles you perform in.
+                  </span>{" "}
+                  Membership runs for the year, but performers choose which production
+                  cycles they take part in, and dues are only owed for those cycles. Full
+                  details are covered at the membership informational.
                 </p>
               </div>
             </div>
@@ -264,7 +272,7 @@ export default function MembershipPage() {
             </h3>
             <p className="font-dm text-cream/55 text-sm leading-relaxed max-w-2xl mb-8">
               Priced separately, the coaching alone would cost more than the membership.
-              Over a full season, every member receives:
+              Across a full season, performing all three cycles, a member receives:
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -285,8 +293,8 @@ export default function MembershipPage() {
                 },
                 {
                   figure: "Included",
-                  label: "Costumes & production",
-                  note: "Staging, costuming, and production costs are carried by EPC.",
+                  label: "Production costs",
+                  note: "Staging, venue, and production costs for every show are carried by EPC.",
                 },
               ].map((v) => (
                 <div key={v.label}>
@@ -300,12 +308,20 @@ export default function MembershipPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-8 pt-6 border-t border-white/10 font-dm text-cream/60 text-sm leading-relaxed">
-              Add professional media, choreography, industry workshops, and company events
-              on top — then set that against{" "}
-              <span className="text-cream font-semibold">$200 a month</span>, the same fee
-              for every division.
-            </p>
+            <div className="mt-8 pt-6 border-t border-white/10 space-y-3">
+              <p className="font-dm text-cream/60 text-sm leading-relaxed">
+                Add professional media, choreography, industry workshops, and company events
+                on top — then set that against{" "}
+                <span className="text-cream font-semibold">$200 a month</span> during the
+                cycles you perform in, the same fee for every division.
+              </p>
+              <p className="font-dm text-cream/50 text-sm leading-relaxed">
+                <span className="text-cream/80 font-semibold">Costumes are not included.</span>{" "}
+                Each production carries a one-time costume fee, separate from membership
+                dues. Costs vary by production and are shared with members before each
+                cycle begins.
+              </p>
+            </div>
           </div>
 
           {/* Transparency — what the fee is and is not. */}
@@ -318,7 +334,7 @@ export default function MembershipPage() {
                 <p className="text-cream/70">
                   Membership fees cover the cost of running the company: training and ice
                   time, coaching and instructor fees, choreography, rehearsal space,
-                  costumes, and production expenses.
+                  and production expenses.
                 </p>
                 <p className="text-cream/70">
                   Those fees are not a wage you are buying back.{" "}

@@ -123,9 +123,9 @@ export default function CompanyPage() {
               </span>
             </div>
             <p className="mt-4 font-dm text-cream/50 text-sm max-w-xl mx-auto">
-              There is no minimum skill requirement for any track. And you commit one
-              production cycle at a time — not the whole year. Members carry through from
-              cycle to cycle, and you are free to step away at the end of any cycle.
+              There is no minimum skill requirement for any track. Membership runs for the
+              year, and performers choose which production cycles they perform in — you are
+              not locked into every show.
             </p>
           </div>
 
@@ -174,7 +174,7 @@ export default function CompanyPage() {
           {/* Fee philosophy stays — it explains what the company does with the
               money. All actual figures, membership and per-show, live on /details. */}
           <p className="mt-12 max-w-2xl mx-auto text-center font-dm text-cream/55 text-sm leading-relaxed">
-            Membership fees go directly toward development, choreography, production costs, and costumes — so that EPC can compensate its instructors,
+            Membership fees go directly toward development, choreography, production costs, and rehearsal space — so that EPC can compensate its instructors,
             staff, and performing artists at a professional standard. You&apos;re not paying to be in the company. You&apos;re investing in the infrastructure
             that makes professional performance possible.
           </p>
