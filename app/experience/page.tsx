@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import WhatMakesDifferent from "@/components/WhatMakesDifferent";
-import Partners from "@/components/Partners";
 
 export const metadata: Metadata = {
   title: "The EPC Experience | Evolution Production Company",
@@ -69,11 +67,8 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* What makes EPC different (relocated from homepage) */}
-      <WhatMakesDifferent />
-
       {/* Intro — the model, with imagery */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="relative h-72 md:h-[460px] rounded-2xl overflow-hidden">
@@ -91,23 +86,15 @@ export default function ExperiencePage() {
               />
             </div>
             <div>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                The Performance Model
-              </p>
               <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-6">
                 ONE CONTINUOUS,{" "}
-                <span className="text-gradient">IMMERSIVE EVENING</span>
+                IMMERSIVE EVENING
               </h2>
-              <p className="font-dm text-cream/70 text-base leading-relaxed mb-4">
+              <p className="font-dm text-cream/70 text-base leading-relaxed">
                 A traditional ice show is a sequence of acts. A recital is a list
                 of routines. EPC is neither. We build one continuous experience
                 where skating, dance, and movement share the same space and the
                 same story — performed close enough for the audience to feel it.
-              </p>
-              <p className="font-dm text-cream/60 text-base leading-relaxed">
-                The result is an evening that flows without interruption,
-                surrounds the audience, and feels unlike anything else in live
-                performance.
               </p>
             </div>
           </div>
@@ -115,15 +102,12 @@ export default function ExperiencePage() {
       </section>
 
       {/* The immersive on-ice model */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              One Ice. One Story. Endless Movement.
-            </p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
               OUR IMMERSIVE{" "}
-              <span className="text-gradient">ON-ICE MODEL</span>
+              ON-ICE MODEL
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-2xl mx-auto">
               We transform a full-size arena ice rink into an intimate, immersive
@@ -133,7 +117,8 @@ export default function ExperiencePage() {
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* The two diagrams sit side by side from lg up; stacked below. */}
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             <figure className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(123,47,190,0.2)]">
               <Image
                 src="/immersive-onice-key.png"
@@ -159,19 +144,16 @@ export default function ExperiencePage() {
       </section>
 
       {/* The pillars */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              What Sets It Apart
-            </p>
             <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest">
               SIX THINGS THAT MAKE{" "}
-              <span className="text-gradient">EPC DIFFERENT</span>
+              EPC DIFFERENT
             </h2>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 gap-px bg-white/[0.06]">
               {PILLARS.map((pillar, i) => (
                 <div
@@ -179,15 +161,9 @@ export default function ExperiencePage() {
                   className="group bg-[#0c0913] p-8 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="font-bebas text-4xl md:text-5xl leading-none text-gradient select-none">
+                    <span className="font-bebas text-4xl md:text-5xl leading-none text-cream/20 select-none">
                       0{i + 1}
                     </span>
-                    <div
-                      className="h-0.5 flex-1 rounded-full"
-                      style={{
-                        background: `linear-gradient(90deg, ${pillar.color}, ${pillar.color}00)`,
-                      }}
-                    />
                   </div>
                   <h3 className="font-bebas text-2xl md:text-3xl text-cream tracking-widest mb-3">
                     {pillar.label}
@@ -202,15 +178,30 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Partnership opportunities (relocated from homepage) */}
-      <Partners />
+      {/* Partnerships are owned by /partnerships — pointer only, no repeated pitch. */}
+      <section className="pb-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+            <p className="font-dm text-cream/60 text-sm leading-relaxed">
+              Rinks, venues, brands, and community organizations can bring this experience
+              to their audience.{" "}
+              <Link
+                href="/partnerships"
+                className="text-gold hover:underline underline-offset-4"
+              >
+                See partnership options →
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-bebas text-5xl text-cream tracking-widest mb-4">
             BE PART OF{" "}
-            <span className="text-gradient">SOMETHING NEW</span>
+            SOMETHING NEW
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8 max-w-xl mx-auto">
             Ascend is the inaugural EPC production — the first chance to step into

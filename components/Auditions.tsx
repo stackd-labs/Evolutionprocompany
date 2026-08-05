@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import { AUDITION_TIERS } from "@/lib/constants";
 
 function FadeUp({
@@ -27,23 +28,20 @@ function FadeUp({
 
 export default function Auditions() {
   return (
-    <section id="auditions" className="relative py-16 md:py-20 overflow-hidden">
+    <section id="auditions" className="relative py-14 md:py-20 md:py-20 overflow-hidden">
       <div className="absolute inset-0 bg-dark" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,_rgba(123,47,190,0.09)_0%,_transparent_60%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp>
           <div className="text-center mb-14">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Join the Company
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
               OUR COMPANY{" "}
-              <span className="text-gradient">STRUCTURE</span>
+              STRUCTURE
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
-              Every EPC member earns their place through audition. Every member
-              performs. Talent is welcome at every age.
+              Four tracks, one standard. Every member earns their place through audition,
+              and every member cast in a cycle performs in it.
             </p>
           </div>
         </FadeUp>
@@ -67,16 +65,25 @@ export default function Auditions() {
                 >
                   {tier.ages}
                 </div>
-                <h3 className="font-bebas text-3xl text-cream tracking-widest mb-2">
+                <h3 className="font-bebas text-3xl text-cream tracking-widest">
                   {tier.name}
                 </h3>
-                <p className="font-dm text-cream/60 text-sm leading-relaxed">
-                  {tier.description}
-                </p>
               </div>
             </FadeUp>
           ))}
         </div>
+
+        {/* Track detail lives on /company — this is a teaser only. */}
+        <FadeUp delay={0.5}>
+          <p className="mt-10 text-center font-dm text-cream/50 text-sm">
+            <Link
+              href="/company"
+              className="text-gold hover:underline underline-offset-4"
+            >
+              See what each track involves →
+            </Link>
+          </p>
+        </FadeUp>
       </div>
     </section>
   );

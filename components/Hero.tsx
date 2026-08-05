@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { ASCEND } from "@/lib/constants";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -131,6 +132,19 @@ export default function Hero() {
         >
           Where Ice Meets Dance. Where Art Becomes Legend.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+          className="mb-8 flex justify-center"
+        >
+          <p className="inline-flex flex-wrap justify-center items-center gap-x-3 gap-y-1 rounded-full border border-gold/30 bg-gold/10 px-5 py-2 font-dm text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
+            <span>Now Casting the Founding Company</span>
+            <span aria-hidden="true" className="text-gold/40">·</span>
+            <span className="text-cream/80">Ascend Coming {ASCEND.performanceWindow}</span>
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

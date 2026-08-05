@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const exploreLinks = [
   { label: "Ascend", href: "/shows" },
-  { label: "EPC Experience", href: "/experience" },
+  { label: "Experience", href: "/experience" },
   { label: "Corporate & Special Events", href: "/events" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
@@ -11,6 +11,7 @@ const exploreLinks = [
 
 const joinLinks = [
   { label: "Join EPC", href: "/company" },
+  { label: "Membership", href: "/details" },
   { label: "Auditions", href: "/shows#register" },
   { label: "Work With Us", href: "/work-with-us" },
   { label: "Partnerships", href: "/partnerships" },
@@ -103,7 +104,7 @@ export default function Footer() {
               href="/shows#register"
               className="inline-block px-5 py-2.5 bg-gold text-dark font-dm font-semibold text-sm rounded-lg hover:bg-gold/90 hover:shadow-[0_0_20px_rgba(245,200,66,0.3)] transition-all duration-200"
             >
-              Apply Now
+              Join Our Company
             </Link>
           </div>
         </div>
@@ -114,7 +115,6 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Evolution Production Company. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/details" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Company Details</Link>
             <Link href="/privacy" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Privacy Policy</Link>
             <Link href="/terms" className="font-dm text-cream/25 text-xs hover:text-cream/50 transition-colors duration-200">Terms of Use</Link>
           </div>

@@ -31,7 +31,7 @@ export default function AscendShowcase() {
   return (
     <section
       id="ascend"
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-14 md:py-20 md:py-24 overflow-hidden"
     >
       <div className="absolute inset-0 bg-dark" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,_rgba(194,24,91,0.12)_0%,_transparent_60%)] pointer-events-none" />
@@ -39,13 +39,13 @@ export default function AscendShowcase() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp>
           <div className="text-center mb-10">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Now Presenting · {ASCEND.tagline}
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
               THE INAUGURAL{" "}
-              <span className="text-gradient">PRODUCTION</span>
+              PRODUCTION
             </h2>
+            <p className="mt-3 font-dm font-semibold text-cream/80 text-sm tracking-widest uppercase">
+              Coming {ASCEND.performanceWindow} · Dates Coming Soon · Washington DC Area
+            </p>
             <p className="mt-4 font-dm text-cream/65 text-base max-w-2xl mx-auto">
               {ASCEND.summary}
             </p>
@@ -59,8 +59,8 @@ export default function AscendShowcase() {
           >
             <Image
               src="/ascend-flyer.png"
-              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. September 2026."
-              width={1536}
+              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. Coming Spring 2027, dates coming soon."
+              width={1535}
               height={1024}
               className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
               sizes="(max-width: 1152px) 100vw, 1152px"

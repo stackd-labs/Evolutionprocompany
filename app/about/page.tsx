@@ -37,13 +37,10 @@ export default function AboutPage() {
       <About />
 
       {/* Founder vision */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-                Founder Vision
-              </p>
               <h2 className="font-bebas text-4xl text-cream tracking-widest mb-6">
                 THE WHY BEHIND EPC
               </h2>
@@ -77,7 +74,7 @@ export default function AboutPage() {
                   {[
                     "Excellence over comfort",
                     "Accountability to the craft",
-                    "All members perform — roles are earned",
+                    "Everyone cast performs — roles are earned",
                     "Growth is mandatory, ego is optional",
                     "The stage is earned, not given",
                   ].map((v) => (
@@ -93,19 +90,16 @@ export default function AboutPage() {
       </section>
 
       {/* Growth phases */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              The Roadmap
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
               THREE PHASES.{" "}
-              <span className="text-gradient">ONE VISION.</span>
+              ONE VISION.
             </h2>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
               {GROWTH_PHASES.map((phase, i) => (
                 <div key={phase.phase} className="bg-[#0c0913] p-8">
@@ -135,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* As EPC Grows */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand opacity-90" />

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   icons: { icon: "/logo-circle.png" },
   title: "Evolution Production Company | Where Ice Meets Dance",
   description:
-    "Evolution Production Company (EPC) is an immersive performance company blending skating, dance, and movement into continuous live experiences in the DMV. Ascend — the inaugural EPC production — premieres September 2026.",
+    "Evolution Production Company (EPC) is an immersive performance company blending skating, dance, and movement into continuous live experiences in the DMV. Ascend — the inaugural EPC production — is coming in Spring 2027, and we are casting the founding company now.",
   keywords: [
     "ice skating",
     "dance performance",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/ascend-flyer.png",
         width: 1536,
         height: 1024,
-        alt: "Ascend — The Inaugural EPC Production, September 2026",
+        alt: "Ascend — The Inaugural EPC Production, Coming Spring 2027",
       },
     ],
   },

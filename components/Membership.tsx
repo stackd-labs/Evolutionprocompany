@@ -28,22 +28,19 @@ function FadeUp({
 
 export default function Membership() {
   return (
-    <section id="membership" className="py-24 md:py-32 bg-dark/90">
+    <section id="membership" className="py-14 md:py-20 bg-dark/90">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Benefits first — what membership includes */}
         <FadeUp>
           <div className="text-center mb-12">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              The Value
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
-              WHAT MEMBERSHIP <span className="text-gradient">INCLUDES</span>
+              WHAT MEMBERSHIP INCLUDES
             </h2>
           </div>
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="mb-20 rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="mb-20 rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
               {MEMBERSHIP_INCLUDES.map((item, i) => (
                 <div
@@ -51,7 +48,7 @@ export default function Membership() {
                   className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-bebas text-2xl text-gradient leading-none w-7">
+                    <span className="font-bebas text-2xl text-cream/20 leading-none w-7">
                       0{i + 1}
                     </span>
                     <h3 className="font-bebas text-xl text-cream tracking-widest">
@@ -70,11 +67,8 @@ export default function Membership() {
         {/* Then pricing — transparent, never hidden */}
         <FadeUp>
           <div className="text-center mb-16">
-            <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">
-              Investment
-            </p>
             <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest">
-              MEMBERSHIP <span className="text-gradient">OPTIONS</span>
+              MEMBERSHIP OPTIONS
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
               Choose the membership path that best fits your goals, experience, and level of involvement within the company.
@@ -119,17 +113,20 @@ export default function Membership() {
                   page.
                 </p>
 
-                <ul className="space-y-3 mb-6 flex-1">
-                  {tier.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className={`flex items-start gap-2 text-sm font-dm ${tier.featured ? "text-cream/90" : "text-cream/70"}`}
-                    >
-                      <span className="text-gold">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Summary, not a reprint — /details itemizes every feature. */}
+                <div className="mb-6 flex-1">
+                  <p
+                    className={`font-bebas text-2xl tracking-widest ${tier.featured ? "text-gold" : "text-gold"}`}
+                  >
+                    {tier.features.length} inclusions
+                  </p>
+                  <p
+                    className={`mt-1 font-dm text-sm leading-relaxed ${tier.featured ? "text-cream/85" : "text-cream/60"}`}
+                  >
+                    {tier.features.slice(0, 3).join(", ")}, and{" "}
+                    {tier.features.length - 3} more.
+                  </p>
+                </div>
 
                 {"castingNote" in tier && tier.castingNote && (
                   <p className="font-dm text-xs text-cream/50 italic mb-6 leading-relaxed border-t border-white/15 pt-4">
@@ -153,16 +150,7 @@ export default function Membership() {
         </div>
 
         <FadeUp delay={0.3}>
-          <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-purple/20 via-magenta/20 to-red/20 text-center">
-            <p className="font-dm text-cream text-sm leading-relaxed">
-              <span className="font-semibold text-gold">Standard membership is $200/month for every division.</span>{" "}
-              The optional Professional Development Track adds $150 per production cycle.{" "}
-              <Link href="/details" className="text-gold underline underline-offset-2 hover:text-gold/80">
-                See full fees &amp; compensation →
-              </Link>
-            </p>
-          </div>
-          <p className="mt-4 text-center font-dm text-cream/40 text-xs tracking-wide">
+          <p className="mt-10 text-center font-dm text-cream/40 text-xs tracking-wide">
             All casting decisions are strictly audition-based. Membership tier does not
             affect role assignment. Principal and corporate spots are earned on the floor.
           </p>

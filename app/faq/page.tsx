@@ -42,10 +42,10 @@ export default function FaqPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-4">
-            STILL HAVE <span className="text-gradient">QUESTIONS?</span>
+            STILL HAVE QUESTIONS?
           </h2>
           <p className="font-dm text-cream/60 text-base mb-8 max-w-xl mx-auto">
             Reach out and we&apos;ll get you everything you need to take your next

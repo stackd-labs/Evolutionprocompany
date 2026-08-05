@@ -44,7 +44,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Rink Partners */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-purple flex-shrink-0" />
@@ -58,17 +58,13 @@ export default function PartnershipsPage() {
             serious and growing performer community.
           </p>
 
-          <div className="mb-8 rounded-3xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+          <div className="mb-8 rounded-2xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(0,0,0,0.45)]">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
-              {RINK_PARTNER_BENEFITS.map((benefit, i) => (
+              {RINK_PARTNER_BENEFITS.map((benefit) => (
                 <div
                   key={benefit.title}
                   className="bg-[#0c0913] p-7 transition-colors duration-300 hover:bg-white/[0.015]"
                 >
-                  <div
-                    className="h-0.5 w-8 rounded-full mb-4"
-                    style={{ background: `linear-gradient(90deg, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}, ${["#7B2FBE","#C2185B","#E8334A"][i % 3]}00)` }}
-                  />
                   <h4 className="font-bebas text-lg text-cream tracking-widest mb-2">
                     {benefit.title}
                   </h4>
@@ -89,7 +85,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Corporate Partners */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-1.5 h-8 rounded-full bg-magenta flex-shrink-0" />
@@ -146,34 +142,45 @@ export default function PartnershipsPage() {
       </section>
 
       {/* Additional partnership types */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-1.5 h-8 rounded-full bg-red flex-shrink-0" />
             <h2 className="font-bebas text-4xl text-cream tracking-widest">MORE WAYS TO PARTNER</h2>
             <div className="h-px flex-1 bg-white/10" />
           </div>
-          <p className="font-dm text-cream/65 text-base leading-relaxed max-w-2xl ml-6">
-            We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
-          </p>
+          {/* Two short paragraphs side by side rather than stacked. */}
+          <div className="ml-6 grid md:grid-cols-2 gap-8 md:gap-12">
+            <p className="font-dm text-cream/65 text-base leading-relaxed">
+              We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
+            </p>
+            <p className="font-dm text-cream/45 text-sm leading-relaxed md:border-l md:border-white/10 md:pl-12">
+              This page is for organizations. If you&apos;re an <span className="text-cream/70">individual</span> —
+              an instructor, choreographer, affiliate, freelancer, or volunteer —{" "}
+              <Link href="/work-with-us" className="text-gold hover:underline underline-offset-4">
+                Work With Us
+              </Link>{" "}
+              is the right place.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* CTA banner */}
-      <section className="py-16">
+      <section className="py-14 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl p-10 md:p-14 text-center">
             <div className="absolute inset-0 bg-gradient-brand" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.1)_0%,_transparent_70%)]" />
             <div className="relative z-10">
               <p className="font-cormorant italic text-cream/80 text-xl mb-3">
-                Don&apos;t see exactly what you need?
+                Don&apos;t see a tier that fits?
               </p>
               <h3 className="font-bebas text-4xl md:text-5xl text-cream tracking-widest mb-4">
-                TELL US WHAT YOU HAVE IN MIND
+                WE BUILD THE DEAL AROUND YOU
               </h3>
               <p className="font-dm text-cream/70 text-base max-w-lg mx-auto">
-                Every partnership we build is custom. Click below to tell us about your organization and vision — we&apos;ll take it from there.
+                Every EPC partnership is structured around your facility, calendar, and goals. Tell us about your organization below and we&apos;ll come back with a proposal.
               </p>
             </div>
           </div>

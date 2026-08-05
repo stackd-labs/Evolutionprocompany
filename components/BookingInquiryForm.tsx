@@ -91,10 +91,9 @@ export default function BookingInquiryForm() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="inquiry" className="py-20 border-t border-white/10 text-center">
-      <p className="font-cormorant italic text-gold text-lg tracking-widest mb-4">Get in Touch</p>
+    <section id="inquiry" className="py-14 md:py-20 border-t border-white/10 text-center">
       <h2 className="font-bebas text-5xl md:text-6xl text-cream tracking-widest mb-4">
-        BOOKING <span className="text-gradient">INQUIRY</span>
+        BOOKING INQUIRY
       </h2>
       <p className="font-dm text-cream/60 text-base max-w-md mx-auto mb-8">
         Event planners and organizations interested in working with EPC — tell us about your event and we&apos;ll be in touch.
