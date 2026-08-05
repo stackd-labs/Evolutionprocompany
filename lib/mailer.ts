@@ -46,12 +46,26 @@ export function shell(opts: { title: string; content: string; footNote?: string 
           <!-- gradient card -->
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background-color:${C.magenta};background-image:linear-gradient(135deg,#7B2FBE 0%,#C2185B 55%,#E8334A 100%);border-radius:16px;">
             <tr>
-              <td align="center" style="padding:34px 28px 22px;">
-                <img src="${SITE}/email-logo.png" width="64" height="64" alt="Evolution Production Company"
-                     style="display:block;width:64px;height:64px;border-radius:50%;border:0;outline:none;text-decoration:none;" />
-                <div style="font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${C.cream};opacity:.9;padding-top:14px;">
-                  Evolution Production Company
-                </div>
+              <td align="center" style="padding:26px 20px 18px;">
+                <!-- The logo carries its own gradient, so placing it bare on the
+                     gradient card reads as a mismatched patch. It sits in a dark
+                     tile instead — the same surface as the content block below —
+                     which is the site's own dark-panel-on-gradient language and
+                     makes the edge deliberate.
+                     The logo also already contains the wordmark, so the line
+                     beneath is the tagline rather than a duplicate. That line
+                     carries the header when a client blocks images. -->
+                <table role="presentation" cellpadding="0" cellspacing="0" style="background:${C.panel};border-radius:14px;">
+                  <tr>
+                    <td align="center" style="padding:18px 18px 14px;">
+                      <img src="${SITE}/email-logo.jpg" width="150" height="150" alt="Evolution Production Company"
+                           style="display:block;width:150px;height:150px;border-radius:8px;border:0;outline:none;text-decoration:none;" />
+                      <div style="font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${C.cream};opacity:.6;padding-top:12px;">
+                        Where Ice Meets Dance
+                      </div>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             <tr>
