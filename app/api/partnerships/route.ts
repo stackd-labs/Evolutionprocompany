@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { saveSubmission } from "@/lib/submissions";
 import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
-import { escapeHtml, limit } from "@/lib/sanitize";
+import { escapeHtml } from "@/lib/sanitize";
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,17 +21,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "One or more fields exceed the maximum allowed length." }, { status: 400 });
     }
 
-    const { error } = await supabase.from("partnership_inquiries").insert({
-      first_name: limit(firstName, 100),
-      last_name: limit(lastName, 100),
-      organization: limit(organization, 200),
-      email: limit(email, 254),
-      phone: phone ? limit(phone, 20) : null,
-      partnership_type: limit(partnershipType, 100),
-      message: message ? limit(message, 2000) : null,
+    await saveSubmission({
+      kind: "partnership",
+      firstName,
+      lastName,
+      organization,
+      email,
+      phone,
+      partnershipType,
+      message,
     });
-
-    if (error) throw error;
 
     const eName = `${escapeHtml(firstName)} ${escapeHtml(lastName)}`;
     const eOrg = escapeHtml(organization);
