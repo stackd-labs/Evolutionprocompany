@@ -99,12 +99,60 @@ export function heading(text: string) {
   return `<h1 style="margin:0 0 18px;font-family:Helvetica,Arial,sans-serif;font-size:21px;line-height:1.3;color:${C.gold};font-weight:bold;">${text}</h1>`;
 }
 
-/** One label/value row. Values must already be HTML-escaped by the caller. */
+/**
+ * Plain light shell for the studio's own notifications.
+ *
+ * Deliberately unbranded and image-free. This is internal mail whose only job is
+ * to be read and acted on, and Zoho — where it lands — blocks remote images by
+ * default, so a logo would show as a placeholder more often than not. Light
+ * background, high contrast, no gradient: legible in any client including
+ * Outlook, with nothing to load.
+ */
+export function adminShell(opts: { title: string; content: string }) {
+  return `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>${opts.title}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f4f4f6;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f6;padding:24px 12px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#ffffff;border:1px solid #e3e3e8;border-radius:8px;">
+            <tr><td style="height:3px;background:${C.magenta};border-radius:8px 8px 0 0;line-height:3px;font-size:0;">&nbsp;</td></tr>
+            <tr>
+              <td style="padding:26px 28px 28px;font-family:Helvetica,Arial,sans-serif;">${opts.content}</td>
+            </tr>
+            <tr>
+              <td style="padding:0 28px 22px;font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.6;color:#8a8a94;border-top:1px solid #ececf1;padding-top:16px;">
+                Sent automatically from the EPC website ·
+                <a href="${SITE}" style="color:#8a8a94;">epcperform.com</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+}
+
+/** Heading for the plain admin email. */
+function adminHeading(text: string) {
+  return `<h1 style="margin:0 0 4px;font-family:Helvetica,Arial,sans-serif;font-size:19px;line-height:1.3;color:#16161a;font-weight:bold;">${text}</h1>`;
+}
+
+/**
+ * One label/value row. Used only by the studio notifications, so it is styled
+ * for their light background. Values must already be HTML-escaped by the caller.
+ */
 export function row(label: string, value: string, last = false) {
-  const border = last ? "" : "border-bottom:1px solid rgba(255,255,255,.09);";
+  const border = last ? "" : "border-bottom:1px solid #ececf1;";
   return `<tr>
-    <td style="padding:11px 0;${border}font-family:Helvetica,Arial,sans-serif;color:rgba(255,248,240,.5);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;width:120px;vertical-align:top;">${label}</td>
-    <td style="padding:11px 0;${border}font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:${C.cream};">${value}</td>
+    <td style="padding:11px 14px 11px 0;${border}font-family:Helvetica,Arial,sans-serif;color:#77777f;font-size:11px;text-transform:uppercase;letter-spacing:1px;width:118px;vertical-align:top;">${label}</td>
+    <td style="padding:11px 0;${border}font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#16161a;">${value}</td>
   </tr>`;
 }
 
@@ -158,12 +206,14 @@ export async function notifyAdmin(opts: {
       to: ADMIN_EMAIL,
       subject: opts.subject,
       replyTo: opts.replyTo,
-      html: shell({
+      html: adminShell({
         title: opts.subject,
         content:
-          heading(opts.heading) +
+          adminHeading(opts.heading) +
+          (opts.replyTo
+            ? `<p style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#77777f;">Reply to this email to respond directly to them.</p>`
+            : `<div style="height:18px;line-height:18px;font-size:0;">&nbsp;</div>`) +
           `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${opts.rows}</table>`,
-        footNote: "Sent automatically from the EPC website.",
       }),
     });
     if (error) throw error;
