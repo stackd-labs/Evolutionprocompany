@@ -59,9 +59,23 @@ export async function POST(req: NextRequest) {
         heading: `Thanks, ${escapeHtml(firstName)}`,
         body: paragraphs(
           `We&rsquo;ve received your <strong style="color:#FFF8F0;">${eType}</strong> inquiry on behalf of ${eOrg}.`,
-          "Every EPC partnership is built around the partner, so the next step is a conversation about what you&rsquo;re trying to achieve. We&rsquo;ll come back to you with a proposal.",
-          "Reply to this email if there&rsquo;s anything you&rsquo;d like us to know first.",
         ),
+        steps: [
+          {
+            title: "We review your inquiry",
+            detail: "Every EPC partnership is built around the partner, not a template.",
+          },
+          {
+            title: "We get back to you soon",
+            detail:
+              "The next step is a short conversation about what you&rsquo;re trying to achieve, then we come back with a proposal.",
+          },
+          {
+            title: "Reach us any time",
+            detail:
+              'Reply to this email or write to <a href="mailto:info@epcperform.com" style="color:#F5C842;text-decoration:underline;">info@epcperform.com</a>.',
+          },
+        ],
       }),
     ]);
 

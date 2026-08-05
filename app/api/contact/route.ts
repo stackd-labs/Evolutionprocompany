@@ -52,9 +52,22 @@ export async function POST(req: NextRequest) {
         heading: `Thanks for reaching out, ${escapeHtml(firstName)}`,
         body: paragraphs(
           `We&rsquo;ve received your message about &ldquo;${eSubject}&rdquo; and it&rsquo;s with the right person.`,
-          "We read everything and respond to serious inquiries within 48 hours.",
-          "You can reply directly to this email if you need to add anything.",
         ),
+        steps: [
+          {
+            title: "Your message is with our team",
+            detail: "We read everything that comes in.",
+          },
+          {
+            title: "We get back to you soon",
+            detail: "Expect a reply within 48 hours for anything that needs one.",
+          },
+          {
+            title: "Reach us any time",
+            detail:
+              'Reply to this email or write to <a href="mailto:info@epcperform.com" style="color:#F5C842;text-decoration:underline;">info@epcperform.com</a>.',
+          },
+        ],
       }),
     ]);
 

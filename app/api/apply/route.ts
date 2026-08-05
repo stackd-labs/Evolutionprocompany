@@ -63,9 +63,23 @@ export async function POST(req: NextRequest) {
         heading: `Application received, ${escapeHtml(firstName)}`,
         body: paragraphs(
           `We&rsquo;ve received your application for <strong style="color:#FFF8F0;">${eRole}</strong>.`,
-          "Our team reviews every application personally. If your background fits what we&rsquo;re building, we&rsquo;ll reach out to talk about next steps.",
-          "You can reply directly to this email to add anything to your application.",
         ),
+        steps: [
+          {
+            title: "We review your application",
+            detail: "Our team reads every one personally.",
+          },
+          {
+            title: "We get back to you soon",
+            detail:
+              "If your background fits what we&rsquo;re building, we&rsquo;ll reach out to talk through the role.",
+          },
+          {
+            title: "Reach us any time",
+            detail:
+              'Reply to this email to add anything, or write to <a href="mailto:info@epcperform.com" style="color:#F5C842;text-decoration:underline;">info@epcperform.com</a>.',
+          },
+        ],
       }),
     ]);
 

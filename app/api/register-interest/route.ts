@@ -65,10 +65,24 @@ export async function POST(req: NextRequest) {
         heading: `Thanks, ${escapeHtml(firstName)} — you're on the list`,
         body: paragraphs(
           "Your interest in auditioning for Evolution Production Company has been received.",
-          "We are casting the founding company now. Auditions are by invitation after interest registration, so the next thing you&rsquo;ll hear from us is an invitation with dates, location, and what to prepare.",
-          "Ascend, our inaugural production, comes to the DMV in Spring 2027 — and the founding cast is being built right now.",
-          "Questions in the meantime? Just reply to this email.",
+          "We are casting the founding company right now, ahead of <strong style=\"color:#FFF8F0;\">Ascend</strong> — our inaugural production, coming to the DMV in Spring 2027.",
         ),
+        steps: [
+          {
+            title: "We review your registration",
+            detail: "Every one is read by our team, not filtered by a form.",
+          },
+          {
+            title: "We get back to you soon",
+            detail:
+              "Auditions are by invitation after registration, so the next thing you&rsquo;ll hear from us is an invitation with dates, location, and what to prepare.",
+          },
+          {
+            title: "Reach us any time",
+            detail:
+              'Reply to this email or write to <a href="mailto:info@epcperform.com" style="color:#F5C842;text-decoration:underline;">info@epcperform.com</a> if you have questions in the meantime.',
+          },
+        ],
       }),
     ]);
 
