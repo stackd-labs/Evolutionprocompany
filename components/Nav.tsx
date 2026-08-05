@@ -6,14 +6,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-// "Home" is intentionally absent — the logo links to /, which frees a slot for Fees & Pay.
+// "Home" is intentionally absent — the logo links to /. About lives in the
+// footer only, which frees the slot for Contact.
 const links = [
   { label: "Ascend", href: "/shows" },
   { label: "Join EPC", href: "/company" },
-  { label: "Fees & Pay", href: "/details" },
-  { label: "EPC Experience", href: "/experience" },
+  { label: "Membership", href: "/details" },
+  { label: "Experience", href: "/experience" },
   { label: "Corporate Events", href: "/events" },
-  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -85,7 +86,7 @@ export default function Nav() {
               href="/shows#register"
               className="cta-sheen px-5 py-2.5 bg-gold text-dark font-dm font-semibold text-sm rounded-lg hover:bg-gold/90 hover:shadow-[0_0_20px_rgba(245,200,66,0.4)] transition-all duration-200"
             >
-              Apply Now
+              Join Our Company
             </Link>
           </div>
 
@@ -129,7 +130,7 @@ export default function Nav() {
               onClick={() => setMenuOpen(false)}
               className="mt-4 px-5 py-3 bg-gold text-dark font-dm font-semibold text-sm rounded-lg text-center"
             >
-              Apply Now
+              Join Our Company
             </Link>
           </div>
         </motion.div>

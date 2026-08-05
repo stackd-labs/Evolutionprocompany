@@ -27,6 +27,14 @@ export default function FormDrawer({ isOpen, onClose, title, subtitle, children 
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
+  // The drawer locks page scroll while open, so it needs a keyboard way out.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen, onClose]);
+
   const drawerVariants = {
     hidden: isMobile ? { y: "100%" } : { x: "100%" },
     visible: isMobile ? { y: 0 } : { x: 0 },
@@ -51,6 +59,9 @@ export default function FormDrawer({ isOpen, onClose, title, subtitle, children 
           {/* Drawer */}
           <motion.div
             key="drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
             variants={drawerVariants}
             initial="hidden"
             animate="visible"

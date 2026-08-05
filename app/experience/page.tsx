@@ -117,7 +117,8 @@ export default function ExperiencePage() {
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* The two diagrams sit side by side from lg up; stacked below. */}
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             <figure className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(123,47,190,0.2)]">
               <Image
                 src="/immersive-onice-key.png"

@@ -149,17 +149,20 @@ export default function PartnershipsPage() {
             <h2 className="font-bebas text-4xl text-cream tracking-widest">MORE WAYS TO PARTNER</h2>
             <div className="h-px flex-1 bg-white/10" />
           </div>
-          <p className="font-dm text-cream/65 text-base leading-relaxed max-w-2xl ml-6">
-            We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
-          </p>
-          <p className="mt-6 ml-6 font-dm text-cream/45 text-sm leading-relaxed max-w-2xl">
-            This page is for organizations. If you&apos;re an <span className="text-cream/70">individual</span> —
-            an instructor, choreographer, affiliate, freelancer, or volunteer —{" "}
-            <Link href="/work-with-us" className="text-gold hover:underline underline-offset-4">
-              Work With Us
-            </Link>{" "}
-            is the right place.
-          </p>
+          {/* Two short paragraphs side by side rather than stacked. */}
+          <div className="ml-6 grid md:grid-cols-2 gap-8 md:gap-12">
+            <p className="font-dm text-cream/65 text-base leading-relaxed">
+              We also work with media outlets, schools and youth programs, hospitality brands, apparel and merchandise companies, technology platforms, and community organizations. If your work touches performance, youth, or the arts — there&apos;s likely a way to align with EPC.
+            </p>
+            <p className="font-dm text-cream/45 text-sm leading-relaxed md:border-l md:border-white/10 md:pl-12">
+              This page is for organizations. If you&apos;re an <span className="text-cream/70">individual</span> —
+              an instructor, choreographer, affiliate, freelancer, or volunteer —{" "}
+              <Link href="/work-with-us" className="text-gold hover:underline underline-offset-4">
+                Work With Us
+              </Link>{" "}
+              is the right place.
+            </p>
+          </div>
         </div>
       </section>
 

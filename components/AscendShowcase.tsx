@@ -59,7 +59,7 @@ export default function AscendShowcase() {
           >
             <Image
               src="/ascend-flyer.png"
-              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. Coming 2027, dates coming soon."
+              alt="Ascend — The Inaugural EPC Production. A continuous live performance experience blending skating, dance, and movement. Coming Spring 2027, dates coming soon."
               width={1535}
               height={1024}
               className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"

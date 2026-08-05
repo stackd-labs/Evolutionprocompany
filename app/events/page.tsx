@@ -72,29 +72,25 @@ export default function EventsPage() {
             </h2>
           </div>
 
-          <div className="space-y-0">
+          {/* Three columns instead of three full-width rows — same content, a
+              third of the scrolling. Stacks on mobile. */}
+          <div className="grid md:grid-cols-3 gap-10 md:gap-8">
             {[
               { num: "01", title: "Athletic Artistry", body: "Figure skaters and dancers performing at a professional level — technique and presentation in every movement." },
               { num: "02", title: "Original Choreography", body: "Every performance is purpose-built. No generic routines — EPC crafts experiences designed for your event and your audience." },
               { num: "03", title: "Scalable Productions", body: "From featured acts to full ensemble productions, EPC works with event organizers and venues to deliver memorable performance experiences for audiences of all sizes." },
-            ].map((item, i, arr) => (
+            ].map((item) => (
               <div key={item.num}>
-                <div className="grid md:grid-cols-[120px_1fr] gap-8 py-10 items-start">
-                  <div className="font-bebas text-5xl md:text-7xl lg:text-8xl text-cream/20 leading-none select-none">
-                    {item.num}
-                  </div>
-                  <div className="pt-2 md:pt-4">
-                    <h3 className="font-bebas text-2xl md:text-3xl text-cream tracking-widest mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="font-dm text-cream/60 text-base leading-relaxed max-w-2xl">
-                      {item.body}
-                    </p>
-                  </div>
+                <div className="font-bebas text-5xl md:text-6xl text-cream/20 leading-none select-none mb-3">
+                  {item.num}
                 </div>
-                {i < arr.length - 1 && (
-                  <div className="h-px bg-gradient-to-r from-purple/40 via-magenta/30 to-transparent" />
-                )}
+                <div className="h-px bg-gradient-to-r from-purple/40 via-magenta/30 to-transparent mb-5" />
+                <h3 className="font-bebas text-2xl text-cream tracking-widest mb-3">
+                  {item.title}
+                </h3>
+                <p className="font-dm text-cream/60 text-base leading-relaxed">
+                  {item.body}
+                </p>
               </div>
             ))}
           </div>

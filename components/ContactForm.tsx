@@ -160,7 +160,23 @@ export default function ContactForm() {
     };
     check();
     window.addEventListener("hashchange", check);
-    return () => window.removeEventListener("hashchange", check);
+
+    // hashchange only fires when the hash actually changes, so arriving from
+    // another page works but a second click while already at #register does
+    // nothing. Catch clicks on any link targeting #register so "Join Our
+    // Company" opens the form every time, including after it's been closed.
+    const onClick = (e: MouseEvent) => {
+      const link = (e.target as HTMLElement | null)?.closest?.(
+        'a[href$="#register"]',
+      );
+      if (link) setOpen(true);
+    };
+    document.addEventListener("click", onClick);
+
+    return () => {
+      window.removeEventListener("hashchange", check);
+      document.removeEventListener("click", onClick);
+    };
   }, []);
 
   return (
@@ -175,7 +191,7 @@ export default function ContactForm() {
           REGISTER YOUR INTEREST
         </h2>
         <p className="font-dm text-cream/60 text-base max-w-sm mx-auto mb-8">
-          We are casting now in the Washington DC area for the founding company. Ascend is coming in 2027 — register to be first to know when audition dates are announced.
+          We are casting now in the Washington DC area for the founding company. Ascend is coming in Spring 2027 — register to be first to know when audition dates are announced.
         </p>
         <button
           onClick={() => setOpen(true)}

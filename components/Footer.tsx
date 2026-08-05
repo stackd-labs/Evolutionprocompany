@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const exploreLinks = [
   { label: "Ascend", href: "/shows" },
-  { label: "EPC Experience", href: "/experience" },
+  { label: "Experience", href: "/experience" },
   { label: "Corporate & Special Events", href: "/events" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
@@ -11,7 +11,7 @@ const exploreLinks = [
 
 const joinLinks = [
   { label: "Join EPC", href: "/company" },
-  { label: "Fees & Pay", href: "/details" },
+  { label: "Membership", href: "/details" },
   { label: "Auditions", href: "/shows#register" },
   { label: "Work With Us", href: "/work-with-us" },
   { label: "Partnerships", href: "/partnerships" },
@@ -104,7 +104,7 @@ export default function Footer() {
               href="/shows#register"
               className="inline-block px-5 py-2.5 bg-gold text-dark font-dm font-semibold text-sm rounded-lg hover:bg-gold/90 hover:shadow-[0_0_20px_rgba(245,200,66,0.3)] transition-all duration-200"
             >
-              Apply Now
+              Join Our Company
             </Link>
           </div>
         </div>
