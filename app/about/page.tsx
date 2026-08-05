@@ -74,7 +74,7 @@ export default function AboutPage() {
                   {[
                     "Excellence over comfort",
                     "Accountability to the craft",
-                    "All members perform — roles are earned",
+                    "Everyone cast performs — roles are earned",
                     "Growth is mandatory, ego is optional",
                     "The stage is earned, not given",
                   ].map((v) => (

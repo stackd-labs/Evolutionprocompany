@@ -41,7 +41,7 @@ export default function Auditions() {
             </h2>
             <p className="mt-4 font-dm text-cream/60 text-base max-w-xl mx-auto">
               Four tracks, one standard. Every member earns their place through audition,
-              and every member performs.
+              and every member cast in a cycle performs in it.
             </p>
           </div>
         </FadeUp>

@@ -41,7 +41,7 @@ export const ASCEND = {
     {
       label: "Company Participation",
       value:
-        "Every company track — Youth, Junior, Company Artists, and Flex — takes part in Ascend. All members perform; principal roles are earned through audition.",
+        "Youth, Junior, and Company Artists members cast in Ascend all perform in it — nobody is benched — and principal roles are earned through audition. Flex Track participants can take part in company life without performing.",
     },
     {
       label: "Tickets",
@@ -100,7 +100,7 @@ export const MEMBERSHIP_INCLUDES = [
   {
     title: "Casting Opportunities",
     description:
-      "Every member performs. Ensemble and principal casting is earned through the audition process.",
+      "Every member cast in a production performs in it. Ensemble and principal casting is earned through the audition process.",
   },
   {
     title: "Production Participation",
@@ -128,7 +128,7 @@ export const MEMBERSHIP_TIERS = [
   {
     name: "Company Member",
     price: "$200/mo",
-    description: "EPC operates on a unified membership model — all accepted members pay the same monthly fee regardless of age or division, and every member is included in company productions.",
+    description: "EPC operates on a unified membership model — all accepted members pay the same monthly fee regardless of age or division, and every member taking part in a production cycle is included in that production.",
     features: [
       "Rehearsals",
       "Production Participation",
@@ -144,7 +144,7 @@ export const MEMBERSHIP_TIERS = [
   },
   {
     name: "Professional Development Track",
-    price: "$150 / cycle",
+    price: "$150 / quarter",
     description: "An optional upgrade for performers who want to expand their opportunities beyond standard company membership.",
     castingNote: "Participation does not impact casting. All company members remain eligible for Ensemble, Featured, and Principal opportunities.",
     features: [
@@ -473,7 +473,7 @@ export const FAQ = [
   {
     question: "Will all members perform?",
     answer:
-      "Yes. Every accepted company member performs. Which role you are cast in varies from production to production based on the casting process and readiness — membership tier never affects casting. Flex Track participants are the exception: they are not required to perform.",
+      "Everyone cast in a production cycle performs in it — nobody is benched. Which role you are cast in varies from production to production based on the casting process and readiness, and membership tier never affects casting. Two things are up to you: performers choose which production cycles they take part in, and Flex Track participants are not required to perform at all.",
   },
   {
     question: "How many shows will I perform in?",

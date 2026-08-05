@@ -58,7 +58,7 @@ export default function MembershipPage() {
           <div className="grid md:grid-cols-2 gap-10 md:gap-14">
             <div>
               <p className="font-bebas text-2xl text-cream tracking-widest mb-3">
-                Every company member performs.
+                Everyone cast in a cycle performs.
               </p>
               <p className="font-dm text-cream/70 text-sm leading-relaxed">
                 Not every member earns the same role, but every performer contributes to
@@ -375,7 +375,7 @@ export default function MembershipPage() {
               <div className="font-dm text-cream/70 text-sm leading-relaxed space-y-4">
                 <p>
                   <span className="text-cream font-semibold">
-                    Membership guarantees you perform. It does not automatically guarantee a
+                    Taking part in a cycle guarantees you perform in it. It does not automatically guarantee a
                     Featured or Principal role.
                   </span>{" "}
                   Those are earned through the casting process for each production, and role
@@ -544,12 +544,20 @@ export default function MembershipPage() {
             </div>
           </div>
 
-          <p className="mt-6 font-dm text-cream/55 text-sm leading-relaxed max-w-3xl">
-            These are starting rates, reviewed each production. Compensation is negotiated
-            case by case based on the role, the performer&apos;s experience, and what the
-            production asks of them — and we expect these rates to grow as the company and
-            its audiences grow.
-          </p>
+          <div className="mt-6 space-y-3 max-w-3xl">
+            <p className="font-dm text-cream/55 text-sm leading-relaxed">
+              These are starting rates, reviewed each production. Compensation is negotiated
+              case by case based on the role, the performer&apos;s experience, and what the
+              production asks of them — and we expect these rates to grow as the company and
+              its audiences grow.
+            </p>
+            <p className="font-dm text-cream/55 text-sm leading-relaxed">
+              <span className="text-cream/80 font-semibold">Corporate and private events</span>{" "}
+              sit outside the production rates above. Compensation for those bookings is
+              discussed with the performer on a per-event basis, since scope, travel, and
+              client requirements vary from one event to the next.
+            </p>
+          </div>
         </div>
       </section>
 
