@@ -1,3 +1,4 @@
+import { logSpam, spamReason } from "@/lib/spam-guard";
 import { NextRequest, NextResponse } from "next/server";
 import { saveSubmission } from "@/lib/submissions";
 import { notifyAdmin, sendConfirmation, row, paragraphs } from "@/lib/mailer";
@@ -6,6 +7,11 @@ import { escapeHtml } from "@/lib/sanitize";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const spam = spamReason(body, { email: "email", names: ["firstName", "lastName", "subject"], messages: ["message"] });
+    if (spam) {
+      logSpam("contact", spam);
+      return NextResponse.json({ success: true });
+    }
     const { firstName, lastName, email, subject, message } = body;
 
     if (!firstName || !lastName || !email || !subject || !message) {

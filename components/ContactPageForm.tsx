@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { HoneypotField, useSpamGuard } from "@/components/HoneypotField";
 
 const SUBJECTS = [
   "General Inquiry",
@@ -24,6 +25,7 @@ export default function ContactPageForm() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const guard = useSpamGuard();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -39,7 +41,7 @@ export default function ContactPageForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, ...guard.fields() }),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -148,6 +150,7 @@ export default function ContactPageForm() {
           >
             {status === "loading" ? "Sending..." : "Send Message"}
           </button>
+          <HoneypotField value={guard.hp} onChange={guard.setHp} />
         </motion.form>
       )}
     </AnimatePresence>
